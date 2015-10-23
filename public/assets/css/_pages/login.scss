@@ -1,0 +1,11 @@
+.login-input {
+
+  @media (min-width: 992px) {
+    width: 250px;
+  }
+
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+
+}
