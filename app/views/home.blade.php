@@ -1,13 +1,13 @@
 @extends('layouts.default')
 @section('content')
 
-<div id="content">
+<div id="content" class="container-fluid">
 	<!-- header -->
-	<div id="header" class="row" style="margin-top:40px;text-align:center;">
+	<div id="header" class="row" style="text-align:center;">
 		<img src="{{asset('assets/img/logo.png')}}" 
 			style="display:block;margin-left:auto;margin-right:auto;max-width:200px;" />
 		<h1>E-Scout</h1>	
-		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
+		<p style="display:block;margin-left:auto;margin-right:auto;" class="col-sm-10 col-sm-push-1">
 			E-Scout adalah sebuah aplikasi website yang bertujuan untuk mengumpulkan talenta-telanta muda
 			anak bangsa yang tidak terjamah pemerintah. Melalui E-Scout kami mengundang seluruh masyarakat
 			Indonesia untuk membantu meningkatkan kualitas SDM kita. Setiap kita dapat melaporkan baik kenalan 

@@ -38,7 +38,12 @@
 		<script src="{{ asset('assets/js/highcharts4/js/modules/exporting.src.js') }}"></script>
 		
 		<!-- loader -->
-		<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />		
+		<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />			
+		<script type="text/javascript">
+		$(document).on('ready', function(){
+			$.material.init();
+		});
+		</script>
 	</head>
 	
 	<body>
