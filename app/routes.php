@@ -49,6 +49,7 @@ Route::get('/kids_list', function()
 });
 Route::get('/schools_list', function()
 {
+
 	return View::make('schools_list');
 });
 Route::get('/login', function()
@@ -101,6 +102,17 @@ Route::get('/school_kids_list', function()
 	return View::make('school.school_kids_list');
 });
 
+
+//PUBLIC
+Route::get('/home_public', function()
+{
+	return View::make('public.home_public');
+});
+Route::get('/public_kids_list', function()
+{
+	return View::make('public.public_kids_list');
+});
+
 // GOVERMENT
 Route::get('/home_goverment', function()
 {
@@ -129,6 +141,39 @@ Route::get('/scouter_kids_list', function()
 	return View::make('scouter.scouter_kids_list');
 });
 
+//ADMIN
+Route::get('/admin', function(){
+	return View::make('admin.dashboard');
+});
+Route::get('/admin/user', function(){
+	return View::make('admin.user');
+});
+Route::get('/admin/donation', function(){
+	$list_donasi = Sumbangan::all();
+	return View::make('admin.donation',compact('list_donasi'));
+});
+Route::get('/admin/campaign', function(){
+	$list_campaign = Campaign::all();
+	return View::make('admin.campaign',compact('list_campaign'));
+});
+Route::get('/admin/kid', function(){
+	$list_siswa = Siswa::all();
+	return View::make('admin.kid',compact('list_siswa'));
+});
+Route::get('/admin/school', function(){
+	$list_sekolah = Sekolah::all();
+	return View::make('admin.school',compact('list_sekolah'));
+});
+Route::get('/admin/report_citizen', function(){
+	$list_laporan = Laporan::where('tipe','=',0)->get();
+	return View::make('admin.report_citizen',compact('list_laporan'));
+});
+Route::get('/admin/report_achievement', function(){
+	$list_laporan = Laporan::where('tipe','=',1)->get();
+	return View::make('admin.report_achievement',compact('list_laporan'));
+});
+
+Route::get('/test123/{city}', 'ReportGenerator@getAllTopStudentByCity');//page
 //------------------------------------------------------TEST EMAIL-------------------------------------------------
 /*Route::get('/email_send',function(){
 	Mail::send('emails.tes', array('key' => 'Tes Email 123'), function($message)

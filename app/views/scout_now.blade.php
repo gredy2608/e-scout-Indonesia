@@ -3,7 +3,7 @@
 
 <div id="content">	
 	<!-- header -->
-	<div id="header" class="row gradient-violet" style="">		
+	<div id="header" class="row gradient-violet" style="padding-bottom: 15px;">		
 		<h1 class="text-center">Scout Now!</h1>	
 		<p class="col-sm-10 col-sm-push-1" style="display:block;margin-left:auto;margin-right:auto;">
 			Disinilah tugas kita sebagai warga negara yang baik melakukan tugasnya. Pada formulir di bawah ini
@@ -13,7 +13,7 @@
 		</p>				
 	</div>	
 	<!-- form content -->
-	<div class="row" style="">
+	<div class="row" style="padding-top: 20px;">
 		<form class="col-sm-10 col-sm-push-1" style="display:inline-block;">
 			<div class="form-group"> 
 				<label for="subjek">Subjek</label>
@@ -75,7 +75,7 @@
 		    	<input type="file" id="f_file" />
 		    	<p class="help-block">Silahkan masukkan file berupa foto identitas atau kegiatan sang anak.</p>
 		  	</div>		  	
-		  	<button type="" class="btn btn-success">Laporkan</button>
+		  	<button type="" class="btn btn-success" style="margin-right: auto; margin-left: auto; display: block;">Laporkan</button>
 		</form>
 	</div>
 	

@@ -11,16 +11,17 @@
 		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
 			Selamat datang di halaman utama untuk akun umum. 
 		</p>				
-		<div class="row" style="margin-top:20px;text-align:center;">			
-			<a href="{{ URL::to('/school_kids_list') }}">
-				<button class="btn btn-success">Lihat Seluruh Siswa</button>
+		<div class="row" style="margin-top:20px;text-align:center;">	 
+			<span class="clearfix"></span>
+			<a class="btn btn-material-deep-orange-A700" href="{{ URL::to('/scout_now') }}" style="margin-left: auto; margin-right: auto;">
+				Scout Now!
 			</a>
 		</div>
 	</div>	
 	<!-- grafik -->
-	<div id="grafik_prestasi_umum" style="margin-top:40px;">
+	<!-- <div id="grafik_prestasi_umum" style="margin-top:40px;"> -->
 		<!-- input grafik nya ada di javascript di bawah -->		
-	</div>
+	<!-- </div> -->
 	<div class="row">
 		<!-- anak berprestasi -->
 		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
@@ -28,14 +29,20 @@
 			<table class="table">
 				<tbody>
 					@for($i = 0 ; $i < 10 ; $i++)
-					<tr>
+					<tr data-toggle="modal" data-target=".popup_request_kid_detail">
 						<td>
-						Nama Siswa/i
+							<a href="javascript:void(0)">Nama Siswa/i</a>
 						</td>
 					</tr>
 					@endfor
 				</tbody>
 			</table>
+
+			<div class="text-center" style="width: 100%; display: block;">
+				<a class="btn btn-warning" href="{{ URL::to('/kids_list') }}" style="margin-left: auto; margin-right: auto;">
+					Lihat Anak Lainnya 
+				</a>
+			</div>
 		</div>
 		<!-- anak berprestasi -->
 		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
@@ -43,14 +50,19 @@
 			<table class="table">
 				<tbody>
 					@for($i = 0 ; $i < 10 ; $i++)
-					<tr>
+					<tr data-toggle="modal" data-target=".popup_request_kid_detail">
 						<td>
-						Nama Siswa/i
+							<a href="javascript:void(0)">Nama Siswa/i</a>
 						</td>
 					</tr>
 					@endfor
 				</tbody>
-			</table>
+			</table> 
+			<div class="text-center" style="width: 100%; display: block;">
+				<a class="btn btn-warning" href="{{ URL::to('/kids_list') }}" style="margin-left: auto; margin-right: auto;">
+					Lihat Anak Lainnya
+				</a>
+			</div>
 		</div>
 		<!-- prestasi sekolah -->
 		<div id="prestasi_sekolah" class="col-md-4" style="margin-top:40px;">
@@ -58,44 +70,52 @@
 			<table class="table">
 				<tbody>
 					@for($i = 0 ; $i < 10 ; $i++)
-					<tr>
+					<tr data-toggle="modal" data-target=".popup_request_kid_detail">
 						<td>
-						Nama Sekolah
+							<a href="javascript:void(0)">Nama Sekolah</a>
 						</td>
 					</tr>
 					@endfor
 				</tbody>
-			</table>		
+			</table>
+			<div class="text-center" style="width: 100%; display: block;">	
+				<a class="btn btn-warning" href="{{ URL::to('/schools_list') }}" style="margin-left: auto; margin-right: auto;">
+					Lihat Sekolah Lainnya
+				</a>	
+			</div>
 		</div>
 	</div>
 	
 </div>
 
+@include('popup_request_kid_detail')
+@include('popup_achievement_detail')
+
 <script>
 	$(document).ready(function(){
 		// lihat ke www.highcharts.com
 		$('#grafik_prestasi_umum').highcharts({
-			 chart: {
-	            type: 'bar'
-	        },
-	        title: {
-	            text: '(statistik prestasi sekolah)'
-	        },
-	        xAxis: {
-	            categories: ['Apples', 'Bananas', 'Oranges']
-	        },
-	        yAxis: {
-	            title: {
-	                text: 'Fruit eaten'
-	            }
-	        },
-	        series: [{
-	            name: 'Jane',
-	            data: [1, 0, 4]
-	        }, {
-	            name: 'John',
-	            data: [5, 7, 3]
-	        }]
+			chart: {
+				type: 'bar'
+			},
+			title: {
+				text: '(statistik prestasi sekolah)'
+			},
+			xAxis: {
+				categories: ['Apples', 'Bananas', 'Oranges']
+			},
+			yAxis: {
+				title: {
+					text: 'Fruit eaten'
+				}
+			},
+			series: [{
+				name: 'Jane',
+				data: [1, 0, 4]
+			}, {
+				name: 'John',
+				data: [5, 7, 3]
+			}]
 			// title: {
 			// 	text: 'Laporan Perkembangan Anggota Gereja',
 			// 	x: -20 //center
@@ -133,7 +153,7 @@
 			// 	sourceWidth:1366
 			// }
 		});
-	});
+});
 </script>
 
 

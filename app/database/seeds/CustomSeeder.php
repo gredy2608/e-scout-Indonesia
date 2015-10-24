@@ -11,7 +11,7 @@ class CustomSeeder extends Seeder {
         $arr_kota_indonesia= array("Jakarta","Bandung","Surabaya","Medan","Palembang","Bengkulu","Semarang","Solo","Bogor","Tangerang","Banten","Denpasar");
         //seed siswa + akta lahir
         //5700
-        for($i = 0 ; $i<=1000; $i++){
+        for($i = 0 ; $i<=5000; $i++){
           //seed akta kelahiran
           $akta = new Akta();
           $akta->kode_akta_lahir = "123450000".$faker->unique()->numberBetween($min = 100, $max = 100000);

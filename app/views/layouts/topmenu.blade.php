@@ -42,35 +42,7 @@
     <!-- check ammap/maps/js/ folder to see all available countries -->
     <!-- map file should be included after ammap.js -->
 	<script src="{{ asset('assets/lib/map/ammap/maps/js/indonesiaHigh.js') }}" type="text/javascript"></script>
-    <script>
-
-		var map;
-
-		AmCharts.ready(function() {
-		    map = new AmCharts.AmMap();
-
-
-		    map.balloon.color = "#000000";
-
-		    var dataProvider = {
-		        mapVar: AmCharts.maps.indonesiaHigh,
-		        getAreasFromMap:true
-		    };
-
-		    map.dataProvider = dataProvider;
-
-		    map.areasSettings = {
-		        autoZoom: true,
-		        selectedColor: "#CC0000"
-		    };
-
-		    map.smallMap = new AmCharts.SmallMap();
-
-		    map.write("mapdiv");
-
-		});
-
-    </script>
+    @include('layouts.map')
 
 	<!-- loader -->
 	<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />			
@@ -126,18 +98,18 @@
 			</nav> -->
 
 
-			<nav class="navbar navbar-material-blue-500 navbar-fixed-top" style=" ">
+			<nav class="navbar gradient-violet navbar-fixed-top" style=" ">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-material-light-blue-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="{{ URL::to('/home') }}">E-Scout</a>
+					<a class="navbar-brand smon" href="{{ URL::to('/home') }}">eScout</a>
 				</div>
 				<div class="navbar-collapse collapse navbar-material-light-blue-collapse">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="{{ URL::to('/scout_now') }}" style="">Scout Now</a></li> 
+						<li class=""><a href="{{ URL::to('/scout_now') }}" style="">Scout Now!</a></li> 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="">Siapa Kamu? <span class="caret"></span></a>
 							<ul class="dropdown-menu">
