@@ -22,7 +22,7 @@ class CreateTableCampaign extends Migration {
 			$table->string("no_telepon_penggagas_campaign");
 			$table->string("nama_campaign");
 			$table->text("detail_campaign");
-			$table->id("id_anak")->unsigned();
+			$table->integer("id_anak")->unsigned();
 			$table->boolean("approved")->default(false);
 			$table->boolean("done")->default(false);
 

@@ -490,3 +490,11 @@ hr {
 
   @include linear-gradient(135deg, #FF4E50, #F9D423);
 }
+
+.gradient-violet {
+  * {
+  color: #fff
+  }
+
+  @include linear-gradient(135deg, #7b4397, #dc2430);
+}

@@ -23,7 +23,7 @@ class CreateTableFunding extends Migration {
 			$table->string("no_rekening_penyumbang");
 			$table->string("bank_tujuan");
 			$table->string("besar_uang_sumbangan");
-			$table->id("id_anak")->nullable()->unsigned();
+			$table->integer("id_anak")->nullable()->unsigned();
 			$table->boolean("approved")->default(false);
 
 			$table->boolean('deleted')->default(false);
