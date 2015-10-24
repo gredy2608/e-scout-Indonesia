@@ -18,44 +18,7 @@
 							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
 							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
 						)
-					</p>
-					
-				<table class="table">
-					<thead>
-						<tr>
-							<th>
-								Daftar Prestasi
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>							
+					</p>							
 				</div>
 			</div>			
 		</div>

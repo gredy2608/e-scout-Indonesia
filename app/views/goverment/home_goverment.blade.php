@@ -8,11 +8,11 @@
 	</div>
 	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
 		<h1>Dinas (NAMA DINAS)</h1>	
-		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
+		<p style="display:block;margin-left:auto;margin-right:auto;">
 			Selamat datang di halaman utama untuk akun dinas. 
 		</p>				
 		<!-- form content -->
-		<div class="row" style="margin-top:40px;width:50%;text-align:center;margin-left:auto;margin-right:auto;">
+		<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
 			<h2>Penambahan Data Anak</h2>
 			<form style="display:inline-block;">			
 			  	<div class="form-group">

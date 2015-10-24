@@ -126,7 +126,7 @@
 			</nav> -->
 
 
-			<nav class="navbar navbar-material-blue-grey-900 navbar-fixed-top" style=" ">
+			<nav class="navbar navbar-material-blue-500 navbar-fixed-top" style=" ">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-material-light-blue-collapse">
 						<span class="icon-bar"></span>
@@ -141,6 +141,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="">Siapa Kamu? <span class="caret"></span></a>
 							<ul class="dropdown-menu">
+								<li><a href="{{ URL::to('/home_public') }}">Umum</a></li>
 								<li><a href="{{ URL::to('/home_school') }}">Sekolah</a></li>
 								<li><a href="{{ URL::to('/home_goverment') }}">Dinas</a></li>
 								<li><a href="{{ URL::to('/home_scouter') }}">Scouter</a></li> 

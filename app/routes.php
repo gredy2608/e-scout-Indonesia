@@ -101,6 +101,16 @@ Route::get('/school_kids_list', function()
 	return View::make('school.school_kids_list');
 });
 
+//SCHOOL
+Route::get('/home_public', function()
+{
+	return View::make('public.home_public');
+});
+Route::get('/public_kids_list', function()
+{
+	return View::make('public.public_kids_list');
+});
+
 // GOVERMENT
 Route::get('/home_goverment', function()
 {
@@ -128,6 +138,38 @@ Route::get('/scouter_kids_list', function()
 {
 	return View::make('scouter.scouter_kids_list');
 });
+
+//ADMIN
+Route::get('/admin', function(){
+	return View::make('admin.dashboard');
+});
+Route::get('/admin/user', function(){
+	return View::make('admin.user');
+});
+Route::get('/admin/donation', function(){
+	return View::make('admin.donation');
+});
+Route::get('/admin/campaign', function(){
+	return View::make('admin.campaign');
+});
+Route::get('/admin/kid', function(){
+	return View::make('admin.kid');
+});
+Route::get('/admin/school', function(){
+	return View::make('admin.school');
+});
+Route::get('/admin/report_citizen', function(){
+	return View::make('admin.report_citizen');
+});
+Route::get('/admin/report_achievement', function(){
+	return View::make('admin.report_achievement');
+});
+
+
+
+
+
+Route::get('/test123', 'ReportGenerator@getAllTopSchool');//page
 
 //------------------------------------------------------TEST EMAIL-------------------------------------------------
 /*Route::get('/email_send',function(){

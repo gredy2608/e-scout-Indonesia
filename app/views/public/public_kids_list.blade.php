@@ -4,12 +4,12 @@
 <div id="content">	
 	<!-- header -->
 	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
-		<a href="#">Sekolah</a>		
+		<a href="#">Umum</a>		
 		/
 		<a href="#">Daftar Anak</a>
 	</div>
 	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
-		<h1>Sekolah (NAMA SEKOLAH)</h1>	
+		<h1>Umum</h1>	
 		<!-- <p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
 			Selamat datang di halaman utama untuk akun sekolah. 
 		</p>				
