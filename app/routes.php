@@ -131,6 +131,24 @@ Route::get('/goverment_kids_list', function()
 	return View::make('goverment.goverment_kids_list');
 });
 
+Route::post('/laporan',function(){
+	$laporan = new Laporan();
+	$laporan->tipe = Input::get('subjek');
+	$laporan->no_ktp_pelapor = Input::get('no_ktp');
+	$laporan->nama_pelapor = Input::get('nama');
+	$laporan->email_pelapor = Input::get('email');
+	$laporan->no_telepon_pelapor = Input::get('no_telp');
+	$laporan->nama_anak = Input::get('nama_anak');
+	$laporan->umur_anak = Input::get('umur_anak');
+	$laporan->sekolah_anak = Input::get('sekolah_anak');
+	$laporan->alamat_anak = Input::get('alamat_anak');
+	$laporan->kota_anak = Input::get('kota_anak');
+	$laporan->keterangan = Input::get('keterangan');
+	$laporan->created_by = 1;
+	$laporan->save();
+	return "Berhasil";
+});
+
 // SCOUTER
 Route::get('/home_scouter', function()
 {
