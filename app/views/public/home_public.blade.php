@@ -3,10 +3,10 @@
 
 <div id="content" class="col-sm-12">	
 	<!-- header -->
-	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
+	<div id="breadcrumb" class="row hidden-xs" style="margin-top:30px;text-align:left;">		
 		<a href="#">Umum</a>				
 	</div>	
-	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
+	<div id="header" class="row" style="margin-top:30px;text-align:center;">		
 		<h1>Umum</h1>	
 		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
 			Selamat datang di halaman utama untuk akun umum. 
