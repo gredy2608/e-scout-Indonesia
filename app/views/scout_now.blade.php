@@ -3,8 +3,8 @@
 
 <div id="content">	
 	<!-- header -->
-	<div id="header" class="row" style="">		
-		<h1 class="text-center">Scout Now</h1>	
+	<div id="header" class="row gradient-violet" style="">		
+		<h1 class="text-center">Scout Now!</h1>	
 		<p class="col-sm-10 col-sm-push-1" style="display:block;margin-left:auto;margin-right:auto;">
 			Disinilah tugas kita sebagai warga negara yang baik melakukan tugasnya. Pada formulir di bawah ini
 			kita dapat melaporkan anak muda bangsa kita yang memiliki talenta luar biasa. Siapa saja anak yang
@@ -15,10 +15,25 @@
 	<!-- form content -->
 	<div class="row" style="">
 		<form class="col-sm-10 col-sm-push-1" style="display:inline-block;">
+			<div class="form-group"> 
+				<label for="subjek">Subjek</label>
+				<div class="radio radio-primary">
+					<label>
+						<input type="radio" name="sample2" value="Anak Putus Sekolah" checked="">
+						Anak Putus Sekolah
+					</label>
+				</div>
+				<div class="radio radio-primary" style="margin-top: 14px;">
+					<label>
+						<input type="radio" name="sample2" value="Anak Berprestasi">
+						Anak Berprestasi
+					</label>
+				</div> 
+			</div>
 			<div class="form-group">
-		    	<label for="f_no_ktp">Nomor KTP</label>
-		    	<input type="text" class="form-control" placeholder="Nomor KTP" id="f_no_ktp" />
-		  	</div>
+				<label for="f_no_ktp">Nomor KTP</label>
+				<input type="text" class="form-control" placeholder="Nomor KTP" id="f_no_ktp" />
+			</div>
 		  	<div class="form-group">
 		    	<label for="f_nama">Nama Lengkap</label>
 		    	<input type="text" class="form-control" placeholder="Nama Lengkap" id="f_nama"/>

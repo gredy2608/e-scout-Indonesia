@@ -37,6 +37,41 @@
 	<script src="{{ asset('assets/js/highcharts4/js/highcharts.js') }}"></script>
 	<script src="{{ asset('assets/js/highcharts4/js/modules/exporting.src.js') }}"></script>
 
+    <link rel="stylesheet" href="{{ asset('assets/lib/map/ammap/ammap.css') }}" type="text/css">
+    <script src="{{ asset('assets/lib/map/ammap/ammap.js') }}" type="text/javascript"></script>
+    <!-- check ammap/maps/js/ folder to see all available countries -->
+    <!-- map file should be included after ammap.js -->
+	<script src="{{ asset('assets/lib/map/ammap/maps/js/indonesiaHigh.js') }}" type="text/javascript"></script>
+    <script>
+
+		var map;
+
+		AmCharts.ready(function() {
+		    map = new AmCharts.AmMap();
+
+
+		    map.balloon.color = "#000000";
+
+		    var dataProvider = {
+		        mapVar: AmCharts.maps.indonesiaHigh,
+		        getAreasFromMap:true
+		    };
+
+		    map.dataProvider = dataProvider;
+
+		    map.areasSettings = {
+		        autoZoom: true,
+		        selectedColor: "#CC0000"
+		    };
+
+		    map.smallMap = new AmCharts.SmallMap();
+
+		    map.write("mapdiv");
+
+		});
+
+    </script>
+
 	<!-- loader -->
 	<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />			
 	<script type="text/javascript">
@@ -106,9 +141,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="">Siapa Kamu? <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Sekolah</a></li>
-								<li><a href="#">Dinas</a></li>
-								<li><a href="#">Scouter</a></li> 
+								<li><a href="{{ URL::to('/home_school') }}">Sekolah</a></li>
+								<li><a href="{{ URL::to('/home_goverment') }}">Dinas</a></li>
+								<li><a href="{{ URL::to('/home_scouter') }}">Scouter</a></li> 
 							</ul>
 						</li>
 						<li><a href="{{ URL::to('/kids_list') }}" style="">Anak Berprestasi</a></li>
