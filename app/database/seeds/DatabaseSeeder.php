@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
 		$user->password = Hash::make('admin');
 		$user->save();
 		$this->call('CustomSeeder');
+		$this->call('PrestasiSeeder');
 		// $this->call('UserTableSeeder');
 	}
 
