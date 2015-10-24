@@ -56,6 +56,41 @@ Route::get('/login', function()
 	return View::make('login');
 });
 
+Route::post('/signin', function()
+{
+	$username = Input::get('username');
+	$password = Input::get('password');
+	$tipe = Input::get('tipe');
+
+	if($tipe=="pengawas"){
+		if($username == "scout" && $password == "scout"){
+			//redirect pengawas
+		}
+		else{
+			return Redirect::to('/login?tipe=pengawas')->with("messages","Username atau Password Salah");
+		}
+	}
+	else if($tipe=="sekolah"){
+		if($username == "sekolah" && $password == "sekolah"){
+			//redirect sekolah
+		}
+		else{
+			return Redirect::to('/login?tipe=sekolah')->with("messages","Username atau Password Salah");
+		}
+	}
+	else if($tipe=="dinas"){
+		if($username == "dinas" && $password == "dinas"){
+			//redirect dinas
+		}
+		else{
+			return Redirect::to('/login?tipe=dinas')->with("messages","Username atau Password Salah");
+		}
+	}
+	else{
+		return Redirect::to('/home');
+	}
+});
+
 //SCHOOL
 Route::get('/home_school', function()
 {
@@ -122,6 +157,10 @@ Route::get('/admin/report_achievement', function(){
 
 
 
+
+
+Route::get('/test123', 'ReportGenerator@getAllTopSchool');//page
+
 //------------------------------------------------------TEST EMAIL-------------------------------------------------
 /*Route::get('/email_send',function(){
 	Mail::send('emails.tes', array('key' => 'Tes Email 123'), function($message)
@@ -131,4 +170,3 @@ Route::get('/admin/report_achievement', function(){
 	});
 	return "Success";
 });*/
-

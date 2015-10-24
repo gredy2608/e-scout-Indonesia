@@ -15,9 +15,10 @@
 					</div> -->
 					<div class="col-sm-10 col-sm-push-1">
 						<div class="panel panel-primary " style="margin-top: 50px;">
-							<div class="panel-heading"> 
-								<h3 class="panel-title">Login</h3> 
+							<div class="panel-heading">
+								<h3 class="panel-title">Login</h3>
 							</div>
+							{{Session::get('messages')}}
 							<div class="panel-body">
 								{{ Form::open(array('url' => '/signin', 'class'=>'form-horizontal')) }}
 								<div class="form-group text-left">
@@ -42,6 +43,7 @@
 								<div class="form-group">
 									<label class="control-label col-sm-4"></label>
 									<div class="col-sm-6">
+										<input type="hidden" name="tipe" value="{{$_GET['tipe']}}" />
 										{{ Form::submit('Login', array('class' => 'btn btn-success', 'id' => 'btn_login')) }}
 									</div>
 								</div>

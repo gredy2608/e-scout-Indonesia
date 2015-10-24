@@ -37,8 +37,6 @@ class CreateTableLaporan extends Migration {
 			$table->dateTime('updated_at')->nullable();
 			$table->dateTime('deleted_at')->nullable();
 
-
-			$table->foreign('id_siswa')->references('id')->on('siswa');
 			$table->foreign('created_by')->references('id')->on('user');
 			$table->foreign('updated_by')->references('id')->on('user');
 			$table->foreign('deleted_by')->references('id')->on('user');

@@ -37,6 +37,41 @@
 		<script src="{{ asset('assets/js/datetimepicker/jquery.datetimepicker.js') }}"></script>
 		<!-- javascript colorpicker -->
 		<script src="{{ asset('assets/js/bootstrap-colorpicker.js') }}"></script>		
+
+        <link rel="stylesheet" href="{{ asset('assets/lib/map/ammap/ammap.css') }}" type="text/css">
+        <script src="{{ asset('assets/lib/map/ammap/ammap.js') }}" type="text/javascript"></script>
+        <!-- check ammap/maps/js/ folder to see all available countries -->
+        <!-- map file should be included after ammap.js -->
+		<script src="{{ asset('assets/lib/map/ammap/maps/js/indonesiaHigh.js') }}" type="text/javascript"></script>
+        <script>
+
+			var map;
+
+			AmCharts.ready(function() {
+			    map = new AmCharts.AmMap();
+
+
+			    map.balloon.color = "#000000";
+
+			    var dataProvider = {
+			        mapVar: AmCharts.maps.indonesiaHigh,
+			        getAreasFromMap:true
+			    };
+
+			    map.dataProvider = dataProvider;
+
+			    map.areasSettings = {
+			        autoZoom: true,
+			        selectedColor: "#CC0000"
+			    };
+
+			    map.smallMap = new AmCharts.SmallMap();
+
+			    map.write("mapdiv");
+
+			});
+
+        </script>
 		
 		<!-- loader -->
 		<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />		

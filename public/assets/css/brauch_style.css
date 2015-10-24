@@ -455,4 +455,11 @@ hr {
   .gradient-orange * {
     color: #fff; }
 
+.gradient-violet {
+  background-color: #7b4397;
+  background-image: -webkit-linear-gradient(-405deg, #7b4397, #dc2430);
+  background-image: linear-gradient(135deg,#7b4397, #dc2430); }
+  .gradient-violet * {
+    color: #fff; }
+
 /*# sourceMappingURL=brauch_style.css.map */
