@@ -465,4 +465,28 @@ hr {
 [data-toggle="modal"] {
   cursor: pointer; }
 
+.rank-ring {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 4px solid #7b4397;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Montserrat;
+  line-height: 86px;
+  width: 90px;
+  height: 90px;
+  display: block;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto; }
+
 /*# sourceMappingURL=brauch_style.css.map */

@@ -53,6 +53,8 @@
 
 	<!-- table content daftar siswa -->	
 	<div class="row" style="margin-top:40px;margin-left:auto;margin-right:auto;">
+	<button type="button" class="btn btn-success">Tambah Siswa</button>
+
 		<table class="table">
 		    <thead>
 		      	<tr>		      		
@@ -66,9 +68,9 @@
 		    <tbody>
 		    	@for($i = 0 ; $i < 5 ; $i++)
 		      	<tr>
-		        	<td data-toggle="modal" data-target=".popup_achievement_detail">(nama lengkap)</td>
-		        	<td data-toggle="modal" data-target=".popup_achievement_detail">(kelas)</td>	
-		        	<td data-toggle="modal" data-target=".popup_achievement_detail">(nilai rata-rata)</td>			        
+		        	<td data-toggle="modal" data-target=".popup_request_kid_detail">(nama lengkap)</td>
+		        	<td data-toggle="modal" data-target=".popup_request_kid_detail">(kelas)</td>	
+		        	<td data-toggle="modal" data-target=".popup_request_kid_detail">(nilai rata-rata)</td>			        
 			        <td class="hidden-xs">
 			        	<ul>
 			        		<li><a href="#" data-toggle="modal" data-target=".popup_achievement_detail">(prestasi)</a></li>
@@ -87,7 +89,11 @@
 	
 </div>
 
-@include('school.popup_add_kid_achievement')
-@include('school.popup_achievement_detail')
+@include('school.popup_add_kid_achievement') 
+
+
+@include('popup_request_kid_detail')
+@include('popup_achievement_detail')
+
 
 @stop

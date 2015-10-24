@@ -11,13 +11,7 @@
 						style="display:block;margin-left:auto;margin-right:auto;max-width:100%;" />
 					<h1>(Gelar Prestasi)</h1>	
 					<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
-						(
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-						)
+						Echo Keterangan Prestasi Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
 					</p>							
 				</div>
 			</div>			
