@@ -54,13 +54,20 @@
 
 		    var dataProvider = {
 		        mapVar: AmCharts.maps.indonesiaHigh,
-		        getAreasFromMap:true
+		        getAreasFromMap:true,
+		        areas: [
+		        {
+		        	"id":"ID-JK",
+		        	"color": "#000000"
+		        }
+		        ]
 		    };
 
 		    map.dataProvider = dataProvider;
 
 		    map.areasSettings = {
 		        autoZoom: true,
+			    color: "#a6e2af",
 		        selectedColor: "#CC0000"
 		    };
 
@@ -69,6 +76,7 @@
 		    map.write("mapdiv");
 
 		});
+ 
 
     </script>
 
