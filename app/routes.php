@@ -66,6 +66,16 @@ Route::get('/school_kids_list', function()
 	return View::make('school.school_kids_list');
 });
 
+//SCHOOL
+Route::get('/home_public', function()
+{
+	return View::make('public.home_public');
+});
+Route::get('/public_kids_list', function()
+{
+	return View::make('public.public_kids_list');
+});
+
 // GOVERMENT
 Route::get('/home_goverment', function()
 {

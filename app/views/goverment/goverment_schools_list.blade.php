@@ -5,7 +5,7 @@
 	<!-- header -->
 	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
 		<a href="#">Dinas</a>		
-		/
+		/ 
 		<a href="#">Daftar Sekolah</a>
 	</div>
 	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
@@ -22,14 +22,14 @@
 		</div> -->
 	</div>	
 	<!-- form content -->
-	<div class="row" style="margin-top:40px;width:50%;text-align:center;margin-left:auto;margin-right:auto;">
+	<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
 		<h2>Form Pencarian</h2>
-		<form style="display:inline-block;">			
-			<div class="form-group">
+		<form style="display:block;">			
+			<div class="form-group text-left">
 		    	<label for="f_nama_sekolah">Nama Sekolah</label>
 		    	<input type="text" class="form-control" id="f_nama_sekolah" placeholder="" />
 		  	</div>
-		  	<div class="form-group">
+		  	<div class="form-group text-left">
 		    	<label for="f_kota">Kota</label>
 		    	<input type="text" class="form-control" id="f_kota" placeholder="" />
 		  	</div>		  		  
