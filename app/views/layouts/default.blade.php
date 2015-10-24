@@ -33,35 +33,8 @@
         <!-- check ammap/maps/js/ folder to see all available countries -->
         <!-- map file should be included after ammap.js -->
 		<script src="{{ asset('assets/lib/map/ammap/maps/js/indonesiaHigh.js') }}" type="text/javascript"></script>
-        <script>
+		@include('layouts.map')
 
-			var map;
-
-			AmCharts.ready(function() {
-			    map = new AmCharts.AmMap();
-
-
-			    map.balloon.color = "#000000";
-
-			    var dataProvider = {
-			        mapVar: AmCharts.maps.indonesiaHigh,
-			        getAreasFromMap:true
-			    };
-
-			    map.dataProvider = dataProvider;
-
-			    map.areasSettings = {
-			        autoZoom: true, 
-			        selectedColor: "#CC0000"
-			    };
-
-			    map.smallMap = new AmCharts.SmallMap();
-
-			    map.write("mapdiv");
-
-			});
-
-        </script>
 		
 		<!-- loader -->
 		<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet">		

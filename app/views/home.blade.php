@@ -15,7 +15,7 @@
 		</p>
 		<span class="clearfix"></span>
 		<a class="btn btn-info" href="{{ URL::to('/scout_now') }}" style="margin-left: auto; margin-right: auto;">
-			Scout Sekarang
+			Scout Now!
 		</a>
 	</div>
 	<!-- visi -->
@@ -108,8 +108,8 @@
 			</div>
 		</div>
 		<div class="row" style="margin-top:20px;text-align:center;">
-			<a href="{{ URL::to('/kids_list') }}">
-				<button class="btn btn-warning">Lihat Anak Lainnya</button>
+			<a class="btn btn-warning" href="{{ URL::to('/kids_list') }}">
+				Lihat Anak Lainnya
 			</a>
 		</div>
 	</div>
@@ -159,8 +159,8 @@
 			</div>
 		</div>
 		<div class="row" style="margin-top:20px;text-align:center;">
-			<a href="{{ URL::to('/schools_list') }}">
-				<button class="btn btn-warning">Lihat Sekolah Lainnya</button>
+			<a class="btn btn-warning" href="{{ URL::to('/schools_list') }}">
+				Lihat Sekolah Lainnya
 			</a>
 		</div>
 	</div>
