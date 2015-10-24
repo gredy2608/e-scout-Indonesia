@@ -14,8 +14,10 @@ class DatabaseSeeder extends Seeder {
 		$user->username = 'admin';
 		$user->password = Hash::make('admin');
 		$user->save();
-		$this->call('CustomSeeder');*/
+		$this->call('CustomSeeder');
 		$this->call('PrestasiSeeder');
+		$this->call('PelajaranSeeder');*/
+		$this->call('RiwayatSeeder');
 		// $this->call('UserTableSeeder');
 	}
 
