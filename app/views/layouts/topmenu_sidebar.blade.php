@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
+		<meta name="mobile-web-app-capable" content="yes">
 		<!-- style -->			
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />		
 		<link href="{{ asset('assets/css/brauch_style.css') }}" rel="stylesheet" />		

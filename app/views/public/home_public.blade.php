@@ -21,106 +21,52 @@
 	<div id="grafik_prestasi_umum" style="margin-top:40px;">
 		<!-- input grafik nya ada di javascript di bawah -->		
 	</div>
-	<!-- prestasi sekolah -->
-	<div id="prestasi_sekolah" class="row" style="margin-top:40px;">
-		<h1 style="text-align:center;">Prestasi yang Diraih</h1>
-		<div class="row" style="margin-top:20px;">			
-			<div class="col-md-6">
-				<p>
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)					
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-				</p>
-			</div>
-			<div class="col-md-6">
-				<img src="{{asset('assets/img/default_image_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:300px;" />
-			</div>
+	<div class="row">
+		<!-- anak berprestasi -->
+		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Siswa/i Bersekolah-Berprestasi</h1>
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Siswa/i
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
 		</div>
-		<div class="row" style="margin-top:20px;">			
-			<div class="col-md-6">
-				<p>
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)					
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-				</p>
-			</div>
-			<div class="col-md-6">
-				<img src="{{asset('assets/img/default_image_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:300px;" />
-			</div>
+		<!-- anak berprestasi -->
+		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Siswa/i Tidak Bersersekolah-Berprestasi</h1>
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Siswa/i
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
 		</div>
-		<div class="row" style="margin-top:20px;">			
-			<div class="col-md-6">
-				<p>
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)					
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-					(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)(deskripsi prestasi)
-				</p>
-			</div>
-			<div class="col-md-6">
-				<img src="{{asset('assets/img/default_image_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:300px;" />
-			</div>
-		</div>		
-	</div>
-	<!-- anak berprestasi -->
-	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
-		<h1 style="text-align:center;">Anak Berprestasi</h1>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
+		<!-- prestasi sekolah -->
+		<div id="prestasi_sekolah" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Sekolah Berprestasi</h1> 
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Sekolah
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>		
 		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>		
 	</div>
 	
 </div>
