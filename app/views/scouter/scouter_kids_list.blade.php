@@ -22,15 +22,15 @@
 		</div> -->
 	</div>	
 	<!-- form content -->
-	<div class="row" style="margin-top:40px;width:50%;text-align:center;margin-left:auto;margin-right:auto;">
+	<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
 		<h2>Form Pencarian</h2>
-		<form style="display:inline-block;">
-			<div class="form-group">
-		    	<label for="f_nama_anak">Nama Anak</label>
+		<form style="display:block;">
+			<div class="form-group text-left">
+		    	<label class="text-left" for="f_nama_anak">Nama Anak</label>
 		    	<input type="text" class="form-control" id="f_nama_anak" placeholder="" />
 		  	</div>
-			<div class="form-group">
-		    	<label for="f_nama_sekolah">Nama Sekolah</label>
+			<div class="form-group text-left">
+		    	<label class="text-left" for="f_nama_sekolah">Nama Sekolah</label>
 		    	<input type="text" class="form-control" id="f_nama_sekolah" placeholder="" />
 		  	</div>
 		  	<div class="form-group">
