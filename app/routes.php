@@ -106,7 +106,11 @@ Route::get('/school_kids_list', function()
 //PUBLIC
 Route::get('/home_public', function()
 {
-	return View::make('public.home_public');
+	$rg = new ReportGenerator();
+	$list_sekolah_berprestasi =json_decode($rg->getAllTopSchool()->getContent());
+	$list_siswa_berprestasi = json_decode($rg->getAllTopStudent()->getContent());
+	$list_siswa_berprestasi_tidak_sekolah = json_decode($rg->getAllTopStudentNotSchool()->getContent());
+	return View::make('public.home_public',compact('list_sekolah_berprestasi','list_siswa_berprestasi','list_siswa_berprestasi_tidak_sekolah'));
 });
 Route::get('/public_kids_list', function()
 {
