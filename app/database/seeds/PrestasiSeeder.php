@@ -10,7 +10,7 @@ class PrestasiSeeder extends Seeder {
         $arr_tingkat = array("Sekolah","Perguruan Tinggi","Daerah","Nasional","Internasional");
         for($i=0;$i<1000;$i++){
           $probability_prestasi = $faker->numberBetween($min = 0, $max = 100);
-          if($probability_prestasi>=70){
+          if($probability_prestasi>=30){
             $prestasi = new Prestasi();
             $prestasi->id_siswa = $i+1;
             $no_kategori = $faker->numberBetween($min = 0, $max = 9);
@@ -36,7 +36,7 @@ class PrestasiSeeder extends Seeder {
             $prestasi->created_by = 1;
             $prestasi->save();
             $next_prestasi_prob = $faker->numberBetween($min = 0, $max = 100);
-            if($next_prestasi_prob >=90){
+            if($next_prestasi_prob >=30){
               $i--;
             }
           }

@@ -4,61 +4,77 @@
 <div id="content" class="col-sm-12">	
 	<!-- header -->
 	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
-		<a href="#">Dinas</a>		
-	</div>
+		<a href="#">Umum</a>				
+	</div>	
 	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
-		<h1>Dinas (NAMA DINAS)</h1>	
-		<p style="display:block;margin-left:auto;margin-right:auto;">
-			Selamat datang di halaman utama untuk akun dinas. 
+		<h1>Umum</h1>	
+		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
+			Selamat datang di halaman utama untuk akun umum. 
 		</p>				
-		<!-- form content -->
-		<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
-			<h2>Penambahan Data Anak</h2>
-			<form style="display:inline-block;">			
-			  	<div class="form-group">
-			    	<!-- <label for="f_file">File</label> -->
-			    	<input type="file" id="f_file" />
-			    	<p class="help-block">Silahkan masukkan file excel berisi daftar anak sesuai format yang sudah ada.</p>
-			  	</div>		  	
-			  	<button type="" class="btn btn-success">Kirim</button>
-			</form>		
-		</div>
-		<div class="row" style="margin-top:40px;text-align:center;">			
-			<a href="{{ URL::to('/goverment_schools_list') }}">
-				<button class="btn btn-info">Lihat Data Seluruh Sekolah</button>
+		<div class="row" style="margin-top:20px;text-align:center;">			
+			<a href="{{ URL::to('/school_kids_list') }}">
+				<button class="btn btn-success">Lihat Seluruh Siswa</button>
 			</a>
 		</div>
 	</div>	
 	<!-- grafik -->
-	<div id="grafik_prestasi_sekolah" style="margin-top:40px;">
+	<div id="grafik_prestasi_umum" style="margin-top:40px;">
 		<!-- input grafik nya ada di javascript di bawah -->		
-	</div>	
-	<!-- anak berprestasi -->
-	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
-		<h1 style="text-align:center;">Anak Berprestasi</h1>
-		@for($i = 0 ; $i < 10 ; $i++)
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
+	</div>
+	<div class="row">
+		<!-- anak berprestasi -->
+		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Siswa/i Bersekolah-Berprestasi</h1>
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Siswa/i
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
 		</div>
-		@endfor		
-	</div>	
+		<!-- anak berprestasi -->
+		<div id="anak_berprestasi" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Siswa/i Tidak Bersersekolah-Berprestasi</h1>
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Siswa/i
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
+		</div>
+		<!-- prestasi sekolah -->
+		<div id="prestasi_sekolah" class="col-md-4" style="margin-top:40px;">
+			<h1 style="text-align:center;">Sekolah Berprestasi</h1> 
+			<table class="table">
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td>
+						Nama Sekolah
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>		
+		</div>
+	</div>
+	
 </div>
 
 <script>
 	$(document).ready(function(){
 		// lihat ke www.highcharts.com
-		$('#grafik_prestasi_sekolah').highcharts({
+		$('#grafik_prestasi_umum').highcharts({
 			 chart: {
 	            type: 'bar'
 	        },
