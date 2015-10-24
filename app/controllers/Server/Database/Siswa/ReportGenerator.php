@@ -49,11 +49,14 @@ class ReportGenerator extends BaseController{
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
 										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."
 										GROUP BY prestasi.id_siswa");
-				$sum[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										if($prestasi!=null){
+											$sum[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
+				
 			}
 		}
 		
-		$prestasiBaru = array_sort($sum, 'prestasi', SORT_DESC);
+		$prestasiBaru = $this->array_sort($sum, 'prestasi', SORT_DESC);
 		
 		return Response::json($prestasiBaru);
 	}
@@ -69,14 +72,17 @@ class ReportGenerator extends BaseController{
 								WHERE status=0 AND riwayat_sekolah.id_sekolah = ".$sekolah[$i]->id);
 			for($j=0;$j<count($siswa);$j++){
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."
 										GROUP BY prestasi.id_siswa");
-				$sum[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										if($prestasi!=null){
+											$sum[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
+				
 			}
 		}
 		
-		$prestasiBaru = array_sort($sum, 'prestasi', SORT_DESC);
-		
+		$prestasiBaru = $this->array_sort($sum, 'prestasi', SORT_DESC);
+		return Response::json($prestasiBaru);
 		
 	}
 	
@@ -90,28 +96,32 @@ class ReportGenerator extends BaseController{
 			
 			$sum1[$i] = array('id'=>$sekolah[$i]->id,'prestasi'=>'0');
 			$sum2[$i] = array('id'=>$sekolah[$i]->id,'prestasi'=>'0');
-			$siswa = DB::select("SELECT * FROM siswa 
+			$siswa = DB::select("SELECT id_siswa FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND riwayat_sekolah.id_sekolah = '$sekolah[$i]->id'");
+								WHERE status=0 AND riwayat_sekolah.id_sekolah = ".$sekolah[$i]->id);
 			for($j=0;$j<count($siswa);$j++){
-				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year2'
+				$prestasi = DB::select("SELECT COUNT(id_siswa) as banyak_prestasi FROM prestasi 
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year2'
 										GROUP BY prestasi.id_siswa");
-				$sum1[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										if($prestasi!=null){
+											$sum1[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			for($j=0;$j<count($siswa);$j++){
-				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year'
+				$prestasi = DB::select("SELECT COUNT(id_siswa) as banyak_prestasi FROM prestasi 
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year'
 										GROUP BY prestasi.id_siswa");
-				$sum2[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+									if($prestasi!=null){
+											$sum2[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			$diff[$i]=array('id'=>$sekolah[$i],'selisih'=>$sum2[$i]['prestasi']-$sum1[$i]['prestasi']);
 		}
-		$selisihBaru = array_sort($diff, 'selisih', SORT_DESC);
-		
+		$selisihBaru = $this->array_sort($diff, 'selisih', SORT_DESC);
+		return Response::json($selisihBaru);
 	}	
 	
 	public function getAllTopGrowthSchoolByCity($year,$city){
@@ -132,25 +142,29 @@ class ReportGenerator extends BaseController{
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
 										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year2'
 										GROUP BY prestasi.id_siswa");
-				$sum1[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum1[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			for($j=0;$j<count($siswa);$j++){
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
 										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year'
 										GROUP BY prestasi.id_siswa");
-				$sum2[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum2[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			$diff[$i]=array('id'=>$sekolah[$i],'selisih'=>$sum2[$i]['prestasi']-$sum1[$i]['prestasi']);
 		}
 		
-		$selisihBaru = array_sort($diff, 'selisih', SORT_DESC);
-		
+		$selisihBaru = $this->array_sort($diff, 'selisih', SORT_DESC);
+		return Response::json($selisihBaru);
 	}
 	
-	public function getAllTopGrowthStudentBySchool($id_sekolah){
-	
+	public function getAllTopGrowthStudentBySchool($id_sekolah,$year){
+		$year2=$year-1;
 		$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
@@ -163,31 +177,35 @@ class ReportGenerator extends BaseController{
 				$sum1[$j] = array('id'=>$siswa[$j]->id,'prestasi'=>'0');
 			
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year2'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year2'
 										GROUP BY prestasi.id_siswa");
-				$sum1[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum1[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			for($j=0;$j<count($siswa);$j++){
 				$sum2[$j] = array('id'=>$siswa[$j]->id,'prestasi'=>'0');
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year'
 										GROUP BY prestasi.id_siswa");
-				$sum2[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum2[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
-			
+			//echo var_dump($sum2);
 			for($j=0;$j<count($siswa);$j++){
-				$diff[$j]=array('id'=>$siswa[$j]->id,'selisih'=>$sum2[$j]['prestasi']-$sum1[$j]['prestasi']);
+				$diff[$j]=array('id'=>$siswa[$j],'selisih'=>$sum2[$j]['prestasi']-$sum1[$j]['prestasi']);
 			}
 			
-			$selisihBaru = array_sort($diff, 'selisih', SORT_DESC);
-		
+			$selisihBaru = $this->array_sort($diff, 'selisih', SORT_DESC);
+		return Response::json($selisihBaru);
 		
 			
 	}
 	
-	public function getAllTopGrowthStudentByCity($city){
-	
+	public function getAllTopGrowthStudentByCity($city,$year){
+		$year2=$year-1;
 		$sekolah = DB::select("SELECT * FROM sekolah WHERE kota = '$city'");
 		$sum1 =array();
 		$sum2 =array();
@@ -196,33 +214,38 @@ class ReportGenerator extends BaseController{
 			$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND riwayat_sekolah.id_sekolah = '$sekolah[$i]->id'");
+								JOIN akta_lahir ON siswa.id_akta_lahir = akta_lahir.id
+								WHERE status=0 AND riwayat_sekolah.id_sekolah = ".$sekolah[$i]->id);
 			
 			for($j=0;$j<count($siswa);$j++){
 				$sum1[$j] = array('id'=>$siswa[$j]->id,'prestasi'=>'0');
 			
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year2'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year2'
 										GROUP BY prestasi.id_siswa");
-				$sum1[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum1[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}
 			
 			for($j=0;$j<count($siswa);$j++){
 				$sum2[$j] = array('id'=>$siswa[$j]->id,'prestasi'=>'0');
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'  AND YEAR(tanggal)= '$year'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."  AND YEAR(tanggal)= '$year'
 										GROUP BY prestasi.id_siswa");
-				$sum2[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+				if($prestasi!=null){
+											$sum2[$j]['prestasi']+=$prestasi[0]->banyak_prestasi;
+										}
 			}	
 
 			for($j=0;$j<count($siswa);$j++){
-				$diff[$j]=array('id'=>$siswa[$j]->id,'selisih'=>$sum2[$j]['prestasi']-$sum1[$j]['prestasi']);
+				$diff[$j]=array('id'=>$siswa[$j],'selisih'=>$sum2[$j]['prestasi']-$sum1[$j]['prestasi']);
 			}
 								
 		}
-			$selisihBaru = array_sort($diff, 'selisih', SORT_DESC);
+			$selisihBaru = $this->array_sort($diff, 'selisih', SORT_DESC);
 		
-		
+			return Response::json($selisihBaru);
 	}
 	
 	public function getAllTopStudentByCity($city){
@@ -230,19 +253,29 @@ class ReportGenerator extends BaseController{
 		$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND sekolah.kota = '$city'");
+								WHERE status=0 ");
+								echo count($siswa);
 		$nilai = array();	
 		$prestasi = array();
 		for($i=0;$i<count($siswa);$i++){
-			$nilaiTemp = DB::select("SELECT AVG(nilai) as rata WHERE nilai.id_siswa = '$siswa[$i]->id' GROUP BY nilai.id_siswa");
-			$nilai[$i]= array('id'=>$siswa[$i]->id,'rata'=>$nilaiTemp[0]->rata);
-			$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$i]->id' GROUP BY prestasi.id_siswa");
-			$prestasi[$i] = array('id'=>$siswa[$i]->id,'sum'=>$prestasiTemp[0]->sum);
+			//echo $siswa[$i]->id;
+			$nilaiTemp = DB::select("SELECT AVG(nilai) as rata FROM nilai WHERE nilai.id_siswa = ".$siswa[$i]->id." GROUP BY nilai.id_siswa");
+				//echo var_dump($nilaiTemp);
+				if($nilaiTemp!=null){
+					$nilai[$i]= array('id'=>$siswa[$i]->id,'rata'=>$nilaiTemp[0]->rata);
+				}
+				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = ".$siswa[$i]->id." GROUP BY prestasi.id_siswa");
+			
+				if($prestasiTemp!=null){
+				$prestasi[$i] = array('id'=>$siswa[$i],'sum'=>$prestasiTemp[0]->sum);
+				}
+			//echo var_dump($nilai);
 		}
 		
-		$nilaiBaru = array_sort($nilai, 'rata', SORT_DESC);
-		$prestasiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		$nilaiBaru = $this->array_sort($nilai, 'rata', SORT_DESC);
+		$prestasiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
 		
+		//return Response::json(array("nilai"=>$nilaiBaru, "prestasi"=>$prestasiBaru));
 	}
 	
 	public function getAllTopStudentBySchool($id_school){
@@ -254,14 +287,14 @@ class ReportGenerator extends BaseController{
 		$nilai = array();
 		$prestasi = array();
 		for($i=0;$i<count($siswa);$i++){
-			$nilaiTemp = DB::select("SELECT AVG(nilai) as rata WHERE nilai.id_siswa = '$siswa[$i]->id' GROUP BY nilai.id_siswa");
-			$nilai[$i]= array('id'=>$siswa[$i]->id,'rata'=>$nilaiTemp[0]->rata);
-			$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$i]->id' GROUP BY prestasi.id_siswa");
-			$prestasi[$i] = array('id'=>$siswa[$i]->id,'sum'=>$prestasiTemp[0]->sum);
+			$nilaiTemp = DB::select("SELECT AVG(nilai) as rata WHERE nilai.id_siswa = ".$siswa[$i]->id." GROUP BY nilai.id_siswa");
+			$nilai[$i]= array('id'=>$siswa[$i],'rata'=>$nilaiTemp[0]->rata);
+			$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = ".$siswa[$i]->id." GROUP BY prestasi.id_siswa");
+			$prestasi[$i] = array('id'=>$siswa[$i],'sum'=>$prestasiTemp[0]->sum);
 		}
 		
-		$nilaiBaru = array_sort($nilai, 'rata', SORT_DESC);
-		$prestasiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		$nilaiBaru = $this->array_sort($nilai, 'rata', SORT_DESC);
+		$prestasiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
 	}
 	
 	public function getAllTopStudent(){
@@ -274,13 +307,13 @@ class ReportGenerator extends BaseController{
 		$prestasi = array();
 		for($i=0;$i<count($siswa);$i++){
 			$nilaiTemp = DB::select("SELECT AVG(nilai) as rata WHERE nilai.id_siswa = '$siswa[$i]->id' GROUP BY nilai.id_siswa");
-			$nilai[$i]= array('id'=>$siswa[$i]->id,'rata'=>$nilaiTemp[0]->rata);
-			$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$i]->id' GROUP BY prestasi.id_siswa");
-			$prestasi[$i] = array('id'=>$siswa[$i]->id,'sum'=>$prestasiTemp[0]->sum);
+			$nilai[$i]= array('id'=>$siswa[$i],'rata'=>$nilaiTemp[0]->rata);
+			$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = ".$siswa[$i]->id." GROUP BY prestasi.id_siswa");
+			$prestasi[$i] = array('id'=>$siswa[$i],'sum'=>$prestasiTemp[0]->sum);
 		}
 		
-		$nilaiBaru = array_sort($nilai, 'rata', SORT_DESC);
-		$prestasiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		$nilaiBaru = $this->array_sort($nilai, 'rata', SORT_DESC);
+		$prestasiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
 	}
 	
 	
@@ -292,15 +325,15 @@ class ReportGenerator extends BaseController{
 			$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND sekolah.kota = '$kota[$i]'");
+								WHERE status=0 AND sekolah.kota = ".$kota[$i]);
 			for($j=0;$j<count($siswa);$j++){
-				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$j]->id'");
+				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = ".$siswa[$j]->id);
 				$prestasi[$i]['sum']+= $prestasiTemp[j]->sum;
 			}
 		}
 		
-		$nilaiBaru = array_sort($prestasi, 'sum', SORT_DESC);
-		
+		$nilaiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
+			return Response::json($nilaiBaru);
 		
 	}
 	
@@ -313,16 +346,16 @@ class ReportGenerator extends BaseController{
 			$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND sekolah.kota = '$kota[$i]'");
+								WHERE status=0 AND sekolah.kota = ".$kota[$i]);
 			for($j=0;$j<count($siswa);$j++){
-				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$j]->id'");
+				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = ".$siswa[$j]->id);
 				$prestasi[$i]['sum']+= $prestasiTemp[j]->sum;
 			}
 		}
 		
-		$nilaiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		$nilaiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
 		
-		
+			return Response::json($nilaiBaru);
 	}
 }
 
