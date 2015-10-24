@@ -96,7 +96,13 @@
 					<!-- class list-group-item -->
 
 					<!-- EDIT HERE -->
-					<li><a href="{{-- url('customerList') --}}" class="s_sidebar_menu">menu sidebar 1</a></li>
+					<li><a href="{{ URL::to('/admin/user') }}" class="s_sidebar_menu">User</a></li>
+					<li><a href="{{ URL::to('/admin/donation') }}" class="s_sidebar_menu">Donation</a></li>
+					<li><a href="{{ URL::to('/admin/campaign') }}" class="s_sidebar_menu">Campaign</a></li>
+					<li><a href="{{ URL::to('/admin/kid') }}" class="s_sidebar_menu">Kid</a></li>
+					<li><a href="{{ URL::to('/admin/school') }}" class="s_sidebar_menu">School</a></li>
+					<li><a href="{{ URL::to('/admin/report_citizen') }}" class="s_sidebar_menu">Report Citizen</a></li>
+					<li><a href="{{ URL::to('/admin/report_achievement') }}" class="s_sidebar_menu">Report Achievement</a></li>
 					<!-- <li><a href="{{ url('activityHeader') }}" class="s_sidebar_menu">Aktivitas</a></li>
 					<li><a href="{{ url('transaction') }}" class="s_sidebar_menu">Transaksi</a></li>
 					<li><a href="{{ url('events') }}" class="s_sidebar_menu">Agenda</a></li>
@@ -118,7 +124,7 @@
 					@yield('content')	                	       
 				<!-- </div>	            -->
 				<!-- EDIT HERE -->
-				<img src="{{-- asset('assets/img/ykk_logo.jpg') --}}" alt="(logo)" class="img-responsive pull-right" style="margin-top:20px;" />
+				<!-- <img src="{{-- asset('assets/img/ykk_logo.jpg') --}}" alt="(logo)" class="img-responsive pull-right" style="margin-top:20px;" /> -->
 	        </div>
 		</div>
 
