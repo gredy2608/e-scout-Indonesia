@@ -29,6 +29,9 @@
 			</a>
 		</div>
 	</div>	
+	<div class="row"> 
+	<div id="mapdiv" style="background-color:#EEEEEE; height: 300px; margin-left: -15px;  margin-right: -15px; "></div> 
+	</div>
 	<!-- grafik -->
 	<div id="grafik_prestasi_sekolah" style="margin-top:40px;">
 		<!-- input grafik nya ada di javascript di bawah -->		

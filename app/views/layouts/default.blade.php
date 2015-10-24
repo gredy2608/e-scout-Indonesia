@@ -51,7 +51,7 @@
 			    map.dataProvider = dataProvider;
 
 			    map.areasSettings = {
-			        autoZoom: true,
+			        autoZoom: true, 
 			        selectedColor: "#CC0000"
 			    };
 
