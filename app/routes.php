@@ -49,6 +49,7 @@ Route::get('/kids_list', function()
 });
 Route::get('/schools_list', function()
 {
+
 	return View::make('schools_list');
 });
 Route::get('/login', function()
@@ -137,22 +138,28 @@ Route::get('/admin/user', function(){
 	return View::make('admin.user');
 });
 Route::get('/admin/donation', function(){
-	return View::make('admin.donation');
+	$list_donasi = Sumbangan::all();
+	return View::make('admin.donation',compact('list_donasi'));
 });
 Route::get('/admin/campaign', function(){
-	return View::make('admin.campaign');
+	$list_campaign = Campaign::all();
+	return View::make('admin.campaign',compact('list_campaign'));
 });
 Route::get('/admin/kid', function(){
-	return View::make('admin.kid');
+	$list_siswa = Siswa::all();
+	return View::make('admin.kid',compact('list_siswa'));
 });
 Route::get('/admin/school', function(){
-	return View::make('admin.school');
+	$list_sekolah = Sekolah::all();
+	return View::make('admin.school',compact('list_sekolah'));
 });
 Route::get('/admin/report_citizen', function(){
-	return View::make('admin.report_citizen');
+	$list_laporan = Laporan::where('tipe','=',0)->get();
+	return View::make('admin.report_citizen',compact('list_laporan'));
 });
 Route::get('/admin/report_achievement', function(){
-	return View::make('admin.report_achievement');
+	$list_laporan = Laporan::where('tipe','=',1)->get();
+	return View::make('admin.report_achievement',compact('list_laporan'));
 });
 
 Route::get('/test123/{city}', 'ReportGenerator@getAllTopStudentByCity');//page
