@@ -308,8 +308,7 @@ class ReportGenerator extends BaseController{
 		$siswa = DB::select("SELECT * FROM siswa
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status<=1");
-								echo var_dump($siswa);
+								WHERE status<=0");
 		$nilai = array();
 		$prestasi = array();
 		for($i=0;$i<count($siswa);$i++){
@@ -326,7 +325,7 @@ class ReportGenerator extends BaseController{
 
 		$nilaiBaru = $this->array_sort($nilai, 'rata', SORT_DESC);
 		$prestasiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
-		//return Response::json(array("nilai"=>$nilaiBaru, "prestasi"=>$prestasiBaru));
+		return Response::json(array("nilai"=>$nilaiBaru, "prestasi"=>$prestasiBaru));
 	}
 
 
