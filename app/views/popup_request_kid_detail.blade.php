@@ -6,19 +6,45 @@
 				<h4 class="modal-title" id="myModalLabel">Permintaan Detail Anak</h4>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">	
-					<div class="form-group">
-						<label class="col-xs-4 control-label">
-							Email Anda
-						</label>
-						<div class="col-xs-4">
-							{{ Form::text('email', Input::old('email'), array('id' => 'f_email', 'class'=>'form-control')) }}
-						</div>
-						<div class="col-xs-2">
-							<input type="button" id="f_request" class="btn btn-success" value="Kirim" />				
-						</div>						
-					</div>													
-				</form>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								Daftar Prestasi
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="#" data-toggle="modal" data-target=".popup_achievement_detail">Prestasi Bidang X</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="modal-fotter">
 			</div>
 		</div>
 	</div>
