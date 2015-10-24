@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
 		<!-- style -->			
-		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />		
+		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />		 	
 		<link href="{{ asset('assets/css/brauch_style.css') }}" rel="stylesheet" />		
 		<link href="{{ asset('assets/css/simple-sidebar.css') }}" rel="stylesheet" />
 		<!-- style for calendar-->
@@ -21,6 +21,8 @@
 		<!-- javascript -->				
 		<script src="{{ asset('assets/js/jquery-1.11.2.min.js') }}"></script>
 		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/lib/bootstrap-material-design/dist/js/material.min.js') }}"></script>	
+		<script src="{{ asset('assets/lib/bootstrap-material-design/dist/js/ripples.min.js') }}"></script>	
 		<!-- javascript for calendar -->	
 		<script src="{{-- asset('assets/lib/jquery.min.js') --}}" ></script> <!-- bagian yg ini error, tapi ga kepake juga -->
 		<script src="{{ asset('assets/lib/moment.min.js') }}" ></script>

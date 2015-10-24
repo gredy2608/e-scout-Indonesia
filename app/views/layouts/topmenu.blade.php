@@ -23,6 +23,8 @@
 		<!-- javascript -->				
 		<script src="{{ asset('assets/js/jquery-1.11.2.min.js') }}"></script>
 		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/lib/bootstrap-material-design/dist/js/material.min.js') }}"></script>	
+		<script src="{{ asset('assets/lib/bootstrap-material-design/dist/js/ripples.min.js') }}"></script>	
 		<!-- javascript for tinymce -->
 		<script src="{{ asset('assets/js/tinymce/tinymce.min.js') }}"></script>
 		<!-- javascript for calendar -->	
