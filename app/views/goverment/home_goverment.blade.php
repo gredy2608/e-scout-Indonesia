@@ -1,48 +1,62 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content" class="col-sm-12">	
+<div id="content" class="col-sm-12">
 	<!-- header -->
-	<div id="breadcrumb" class="row hidden-xs" style="margin-top:15px;text-align:left;">		
-		<a href="#">Dinas</a>		
+	<div id="breadcrumb" class="row hidden-xs" style="margin-top:15px;text-align:left;">
+		<a href="#">Dinas</a>
 	</div>
-	<div id="header" class="row" style="margin-top:30px;text-align:center;">		
-		<h1>Dinas (NAMA DINAS)</h1>	
+	<div id="header" class="row" style="margin-top:30px;text-align:center;">
+		<h1>Dinas (NAMA DINAS)</h1>
 		<p style="display:block;margin-left:auto;margin-right:auto;">
-			Selamat datang di halaman utama untuk akun dinas. 
-		</p>				
+			Selamat datang di halaman utama untuk akun dinas.
+		</p>
 		<!-- form content -->
 		<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
-			<h2>Penambahan Data Anak</h2>
-			<form style="display:inline-block;">			
-				<div class="form-group">
-					<!-- <label for="f_file">File</label> -->
-					<input type="file" id="f_file" />
-					<p class="help-block">Silahkan masukkan file excel berisi daftar anak sesuai format yang sudah ada.</p>
-				</div>		  	
-				<button type="" class="btn btn-success">Kirim</button>
-			</form>		
+			<div class="col-md-6">
+				<h2>Penambahan/Perubahan Data Anak</h2>
+				<form style="display:inline-block;" class="import_excel_student_form">
+					<div class="form-group">
+						<!-- <label for="f_file">File</label> -->
+						<input type="file" id="f_file" />
+						<p class="help-block">Silahkan masukkan file excel berisi daftar anak sesuai format yang sudah ada.</p>
+					</div>
+					<button type="submit" class="btn btn-success">Kirim</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h2>Penambahan/Perubahan Data Sekolah</h2>
+				<form style="display:inline-block;" class="import_excel_school_form">
+					<div class="form-group">
+						<!-- <label for="f_file">File</label> -->
+						<input type="file" id="f_file_sekolah" />
+						<p class="help-block">Silahkan masukkan file excel berisi daftar sekolah sesuai format yang sudah ada.</p>
+					</div>
+					<button type="submit" class="btn btn-success">Kirim</button>
+				</form>
+			</div>
+
 		</div>
-		<div class="row" style="margin-top:40px;text-align:center;">			
+		<div class="row" style="margin-top:40px;text-align:center;">
 			<a href="{{ URL::to('/goverment_schools_list') }}">
 				<button class="btn btn-info">Lihat Data Seluruh Sekolah</button>
 			</a>
 		</div>
-	</div>	
-	<div class="row"> 
-		<div id="mapdiv" style="background-color:#EEEEEE; height: 300px; margin-left: -15px;  margin-right: -15px; "></div> 
+	</div>
+	<div class="row">
+		<div id="mapdiv" style="background-color:#EEEEEE; height: 300px; margin-left: -15px;  margin-right: -15px; "></div>
 	</div>
 	<!-- grafik -->
-	<div id="grafik_prestasi_sekolah" style="margin-top:40px;">
-		<!-- input grafik nya ada di javascript di bawah -->		
-	</div>	
+	<!--<div id="grafik_prestasi_sekolah" style="margin-top:40px;">
+		<!-- input grafik nya ada di javascript di bawah -->
+	<!--</div>
 	<!-- anak berprestasi -->
 	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
 		<h1 style="text-align:center;">Anak Berprestasi</h1>
 		@for($i = 0 ; $i < 10 ; $i++)
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
+				<img src="{{asset('assets/img/default_pp_icon.png')}}"
 				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
@@ -54,8 +68,8 @@
 				</ul>
 			</div>
 		</div>
-		@endfor		
-	</div>	
+		@endfor
+	</div>
 </div>
 
 <script>
@@ -83,8 +97,8 @@
 						"color": "hsl(129, {{100-($kota->ranking * 4)}}%, 77%)"
 					},
 				@endforeach
-		        
-					 
+
+
 				{
 					"id":"TL",
 					"title":"Timor-Leste",
@@ -123,11 +137,11 @@
 		});
 
 
-</script> 
+</script>
 <script>
 	$(document).ready(function(){
 		// lihat ke www.highcharts.com
-		$('#grafik_prestasi_sekolah').highcharts({
+		/*$('#grafik_prestasi_sekolah').highcharts({
 			chart: {
 				type: 'bar'
 			},
@@ -185,7 +199,7 @@
 			// 	sourceHeight:768,
 			// 	sourceWidth:1366
 			// }
-		});
+		});*/
 });
 </script>
 
