@@ -18,7 +18,8 @@ class CreateTablePrestasi extends Migration {
 			$table->increments('id');
 			$table->integer('id_event')->unsigned()->nullable();
 			$table->string('nama_event')->nullable();
-			$table->string('keterangan_menang');
+			$table->integer('juara')->nullable();
+			$table->string('kategori');
 			$table->text('keterangan');
 			$table->date('tanggal');
 			$table->integer('id_siswa')->unsigned();

@@ -33,6 +33,7 @@ class CreateTableSekolah extends Migration {
 				$table->string('kota');
 				$table->integer('kode_pos');
 				$table->string('telepon');
+				$table->string('email');
 				$table->string('username');
 				$table->string('password');
 				$table->boolean('deleted')->default(false);
