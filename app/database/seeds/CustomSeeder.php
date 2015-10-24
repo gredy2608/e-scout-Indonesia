@@ -96,5 +96,29 @@ class CustomSeeder extends Seeder {
           $sekolah->created_by = 1;
           $sekolah->save();
         }
+
+        //riwayat sekolah
+        $array_jurusan = array("IPA","BAHASA","IPS","Perhotelan","Farmasi","Mesin","Teknik Informatika","Sistem Informasi");
+        for($k=0;$k<500;$k++){
+          $riwayat = new Riwayat();
+          $riwayat->id_siswa = $k+1;
+          $riwayat->id_sekolah = $faker->numberBetween($min = 1, $max = 18);
+          $tingkat_pendidikan = $faker->numberBetween($min = 0, $max = 3);
+          $riwayat->tingkat_pendidikan = $tingkat_pendidikan;
+          $riwayat->kelas = $faker->numberBetween($min = 1, $max = 12);
+          if($tingkat_pendidikan == 3){
+            $riwayat->jurusan = $array_jurusan[$faker->numberBetween($min = 0, $max = 7)];
+          }
+          else{
+            $riwayat->jurusan = "";
+          }
+
+          $tahun = $faker->numberBetween($min = 1997, $max = 2005);
+          $riwayat->tahun_ajaran = $tahun."/".($tahun+1);
+          $riwayat->status = $faker->numberBetween($min = 0, $max = 3);
+          $riwayat->created_by = 1;
+          $riwayat->save();
+        }
+
     }
 }
