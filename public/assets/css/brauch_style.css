@@ -21,7 +21,7 @@ html, body {
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 400; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .smon {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-weight: 700; }
@@ -461,5 +461,8 @@ hr {
   background-image: linear-gradient(135deg,#7b4397, #dc2430); }
   .gradient-violet * {
     color: #fff; }
+
+[data-toggle="modal"] {
+  cursor: pointer; }
 
 /*# sourceMappingURL=brauch_style.css.map */

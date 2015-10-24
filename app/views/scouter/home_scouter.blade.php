@@ -41,8 +41,8 @@
 		</div>
 		@endfor		
 		<div class="row" style="margin-top:20px;text-align:center;">			
-			<a href="{{ URL::to('/scouter_kids_list') }}">
-				<button class="btn btn-warning">Lihat Anak Lainnya</button>
+			<a class="btn btn-warning" href="{{ URL::to('/scouter_kids_list') }}">
+				Lihat Anak Lainnya 
 			</a>
 		</div>
 	</div>	
