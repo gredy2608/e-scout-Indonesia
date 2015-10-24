@@ -1,15 +1,15 @@
 /* ==========================================================================
    SASS Functions
    ========================================================================== */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-@import '_bourbon.scss';
-@import '_pages/login';
-  
-@import '../lib/bootstrap-material-design/dist/css/material.css';
-@import '../lib/bootstrap-material-design/dist/css/material-fullpalette.css';
-@import '../lib/bootstrap-material-design/dist/css/ripples.css';
+   @import '_bourbon.scss';
+   @import '_pages/login';
+
+   @import '../lib/bootstrap-material-design/dist/css/material.css';
+   @import '../lib/bootstrap-material-design/dist/css/material-fullpalette.css';
+   @import '../lib/bootstrap-material-design/dist/css/ripples.css';
 
 /* ==========================================================================
    Common  
@@ -477,7 +477,7 @@ hr {
 
 .gradient-blue {
   * {
-  color: #fff
+    color: #fff
   }
 
   @include linear-gradient(135deg, #3266AC, #32CBDB);
@@ -485,7 +485,7 @@ hr {
 
 .gradient-orange {
   * {
-  color: #fff
+    color: #fff
   }
 
   @include linear-gradient(135deg, #FF4E50, #F9D423);
@@ -493,12 +493,31 @@ hr {
 
 .gradient-violet {
   * {
-  color: #fff
+    color: #fff
   }
 
   @include linear-gradient(135deg, #7b4397, #dc2430);
 }
 
 [data-toggle="modal"] {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.rank-ring {
+  @include border-top-radius(100px);
+  @include border-bottom-radius(100px);
+  @include border-left-radius(100px);
+  @include border-right-radius(100px);
+  border: 4px solid #7b4397;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Montserrat;
+  line-height: 86px;
+  width: 90px;
+  height: 90px;
+  display: block;
+  padding: 0px;
+  @include box-sizing(border-box);
+  margin-right: auto;
+  margin-left: auto;
 }

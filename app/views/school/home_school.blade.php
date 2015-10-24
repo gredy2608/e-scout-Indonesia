@@ -9,15 +9,12 @@
 	<div id="header" class="row" style="margin-top:30px;text-align:center;">		
 		<h1 style="margin-bottom: 0px;">Echo Nama Sekolah</h1>	
 		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
-			Selamat datang di halaman akun sekolah. 
-		</p>				
-		<div class="row" style="margin-top:20px;text-align:center;">			
-			<a href="{{ URL::to('/school_kids_list') }}">
-				<button class="btn btn-success">Lihat Seluruh Siswa</button>
-			</a>
-		</div>
-	</div>	
-	Ranking Provinsi n/17
+			Ranking Sekolah dalam Provinsi. 
+		</p>		
+		<span class="rank-ring" style="">
+			7/15
+		</span>		
+	</div>	 
 	<!-- grafik -->
 	<!-- <div id="grafik_prestasi_sekolah" style="margin-top:40px;"></div> -->
 	<!-- prestasi sekolah -->
@@ -58,45 +55,43 @@
 		</div>		
 	</div>
 	<!-- anak berprestasi -->
-	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
-		<h1 style="text-align:center;">Anak Berprestasi</h1>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3"> 
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
+
+	<div id="anak_berprestasi" class="col-md-12" style="margin-top:40px;">
+		<h1 style="text-align:center;">Murid Berprestasi</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						Nama
+					</th>
+					<th>
+						Umur
+					</th> 
+				</tr>
+			</thead>
+			<tbody>
+				@for($i = 0 ; $i < 10 ; $i++)
+				<tr data-toggle="modal" data-target=".popup_request_kid_detail">
+					<td>
+						<a href="javascript:void(0)">Nama Siswa/i</a>
+					</td>
+					<td>
+						18
+					</td>
+				</tr>
+				@endfor
+			</tbody>
+		</table> 
+		<div class="row" style="margin-top:20px;text-align:center;">			
+			<a href="{{ URL::to('/school_kids_list') }}">
+				<button class="btn btn-success">Lihat Seluruh Siswa</button>
+			</a>
 		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3"> 
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3"> 
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>		
 	</div>
+
+	 
+@include('popup_request_kid_detail')
+@include('popup_achievement_detail')  
 	
 </div>
 
