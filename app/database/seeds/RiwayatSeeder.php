@@ -7,11 +7,11 @@ class RiwayatSeeder extends Seeder {
     public function run() {
         $faker = Faker::create();
         $array_jurusan = array("IPA","BAHASA","IPS","Perhotelan","Farmasi","Mesin","Teknik Informatika","Sistem Informasi");
-        for($k=0;$k<1000;$k++){
+        for($k=0;$k<5000;$k++){
           $prob_sekolah = $faker->numberBetween($min = 0, $max = 100);
-          if($prob_sekolah<=5){
+          if($prob_sekolah<=1){
             $current_school = $faker->numberBetween($min = 1, $max = 6);
-            $tahun = $faker->numberBetween($min = 1997, $max = 2009);
+            $tahun = $faker->numberBetween($min = 2005, $max = 2009);
             for($i=0;$i<12&&$tahun<=2015;$i++){
               $riwayat = new Riwayat();
               $riwayat->id_siswa = $k+1;
@@ -50,13 +50,13 @@ class RiwayatSeeder extends Seeder {
                 $nilai->save();
               }
 
-              if($prob_status<=5){
+              if($prob_status<=1){
                 //keluar
                 $riwayat->status = 3;
                 $riwayat->save();
                 break;
               }
-              else if($prob_status<=10){
+              else if($prob_status<=3){
                 //tinggal kelas
                 $riwayat->status = 2;
                 $riwayat->save();
