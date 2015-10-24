@@ -10,13 +10,13 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Eloquent::unguard();
-		/*$user = new User();
+		$user = new User();
 		$user->username = 'admin';
 		$user->password = Hash::make('admin');
 		$user->save();
 		$this->call('CustomSeeder');
 		$this->call('PrestasiSeeder');
-		$this->call('PelajaranSeeder');*/
+		$this->call('PelajaranSeeder');
 		$this->call('RiwayatSeeder');
 		// $this->call('UserTableSeeder');
 	}
