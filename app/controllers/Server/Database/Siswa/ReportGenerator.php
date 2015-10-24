@@ -22,7 +22,7 @@ class ReportGenerator extends BaseController{
 		
 		$prestasiBaru = array_sort($sum, 'prestasi', SORT_DESC);
 		
-		
+		return Response::json($prestasiBaru);
 	}
 
 	public function getTopSchoolByCity($city){
@@ -248,6 +248,49 @@ class ReportGenerator extends BaseController{
 		
 		$nilaiBaru = array_sort($nilai, 'rata', SORT_DESC);
 		$prestasiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+	}
+	
+	
+	public function getTopSchoolCity(){
+		$kota = array("Jakarta","Bandung","Surabaya","Medan","Palembang","Bengkulu","Semarang","Solo","Bogor","Tangerang","Banten","Denpasar");
+		$prestasi = array();
+		for($i=0;$i<count($kota);$i++){
+			$prestasi[$i] =array('kota'=>$kota[$i],'sum'=>0);
+			$siswa = DB::select("SELECT * FROM siswa 
+								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
+								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
+								WHERE status=0 AND sekolah.kota = '$kota[$i]'");
+			for($j=0;$j<count($siswa);$j++){
+				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$j]->id'");
+				$prestasi[$i]['sum']+= $prestasiTemp[j]->sum;
+			}
+		}
+		
+		$nilaiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		
+		
+	}
+	
+	public function getTopGrowthCity(){
+	
+		$kota = array("Jakarta","Bandung","Surabaya","Medan","Palembang","Bengkulu","Semarang","Solo","Bogor","Tangerang","Banten","Denpasar");
+		$prestasi = array();
+		for($i=0;$i<count($kota);$i++){
+			$prestasi[$i] =array('kota'=>$kota[$i],'sum'=>0);
+			$siswa = DB::select("SELECT * FROM siswa 
+								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
+								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
+								WHERE status=0 AND sekolah.kota = '$kota[$i]'");
+			for($j=0;$j<count($siswa);$j++){
+				$prestasiTemp = DB::select("SELECT count(*) as sum FROM prestasi WHERE prestasi.id_siswa = '$siswa[$j]->id'");
+				$prestasi[$i]['sum']+= $prestasiTemp[j]->sum;
+			}
+		}
+		
+		$nilaiBaru = array_sort($prestasi, 'sum', SORT_DESC);
+		
+		
+	
 	}
 }
 
