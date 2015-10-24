@@ -129,8 +129,6 @@ Route::get('/scouter_kids_list', function()
 	return View::make('scouter.scouter_kids_list');
 });
 
-
-Route::get('/test123/{city}', 'ReportGenerator@getAllTopStudentByCity');//page
 //------------------------------------------------------TEST EMAIL-------------------------------------------------
 /*Route::get('/email_send',function(){
 	Mail::send('emails.tes', array('key' => 'Tes Email 123'), function($message)
