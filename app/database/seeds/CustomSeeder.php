@@ -99,25 +99,65 @@ class CustomSeeder extends Seeder {
 
         //riwayat sekolah
         $array_jurusan = array("IPA","BAHASA","IPS","Perhotelan","Farmasi","Mesin","Teknik Informatika","Sistem Informasi");
-        for($k=0;$k<500;$k++){
-          $riwayat = new Riwayat();
-          $riwayat->id_siswa = $k+1;
-          $riwayat->id_sekolah = $faker->numberBetween($min = 1, $max = 18);
-          $tingkat_pendidikan = $faker->numberBetween($min = 0, $max = 3);
-          $riwayat->tingkat_pendidikan = $tingkat_pendidikan;
-          $riwayat->kelas = $faker->numberBetween($min = 1, $max = 12);
-          if($tingkat_pendidikan == 3){
-            $riwayat->jurusan = $array_jurusan[$faker->numberBetween($min = 0, $max = 7)];
-          }
-          else{
-            $riwayat->jurusan = "";
-          }
+        for($k=0;$k<1000;$k++){
+          $prob_sekolah = $faker->numberBetween($min = 0, $max = 100);
+          if($prob_sekolah<=5){
+            $current_school = $faker->numberBetween($min = 1, $max = 6);
+            $tahun = $faker->numberBetween($min = 1997, $max = 2005);
+            for($i=0;$i<12&&$tahun<=2015;$i++){
+              $riwayat = new Riwayat();
+              $riwayat->id_siswa = $k+1;
+              $riwayat->id_sekolah = $current_school;
+              if($i<6){
+                $riwayat->tingkat_pendidikan = 0;
+                $riwayat->jurusan="";
+              }
+              else if($i<9){
+                $riwayat->tingkat_pendidikan = 1;
+                $riwayat->jurusan="";
+              }
+              else{
+                $riwayat->tingkat_pendidikan = 2;
+                $riwayat->jurusan = $array_jurusan[$faker->numberBetween($min = 0, $max = 7)];
+              }
+              $riwayat->tahun_ajaran = $tahun."/".($tahun+1);
 
-          $tahun = $faker->numberBetween($min = 1997, $max = 2005);
-          $riwayat->tahun_ajaran = $tahun."/".($tahun+1);
-          $riwayat->status = $faker->numberBetween($min = 0, $max = 3);
-          $riwayat->created_by = 1;
-          $riwayat->save();
+              $prob_status = $faker->numberBetween($min = 0, $max = 100);
+
+              $riwayat->created_by = 1;
+
+              if($prob_status<=5){
+                //keluar
+                $riwayat->status = 3;
+                $riwayat->save();
+                break;
+              }
+              else if($prob_status<=20){
+                //tinggal kelas
+                $riwayat->status = 2;
+                $riwayat->save();
+                $i--;
+              }
+              else{
+                if($tahun==2015){
+                  $riwayat->status = 0;
+                  $riwayat->save();
+                  break;
+                }
+                else{
+                  $riwayat->status = 1;
+                  $riwayat->save();
+                }
+              }
+              if($i==5){
+                $current_school = $faker->numberBetween($min = 7, $max = 12);
+              }
+              else if($i==8){
+                $current_school = $faker->numberBetween($min = 13, $max = 18);
+              }
+              $tahun++;
+            }
+          }
         }
 
     }
