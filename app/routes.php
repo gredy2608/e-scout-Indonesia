@@ -121,8 +121,10 @@ Route::get('/public_kids_list', function()
 
 // GOVERMENT
 Route::get('/home_goverment', function()
-{
-	return View::make('goverment.home_goverment');
+{	
+	$dg = new DataGetter();
+	$ranking_kota = json_decode($dg->getTopSchoolCity()->getContent());
+	return View::make('goverment.home_goverment',compact("ranking_kota"));
 });
 Route::get('/goverment_schools_list', function()
 {

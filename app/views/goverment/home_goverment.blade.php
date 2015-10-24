@@ -76,197 +76,34 @@
 		        	// "id":"ID-JK",
 		        	// "color": "#000000"
 		        },
-		        {
-		        	"id":"ID-AC",
-		        	"title":"Aceh",
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-BA",
-		        	"title":"Bali", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-BB",
-		        	"title":"Bangka Belitung", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-BE",
-		        	"title":"Bengkulu", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-BT",
-		        	"title":"Banten", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-GO",
-		        	"title":"Gorontalo", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-JA",
-		        	"title":"Jambi", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-JB",
-		        	"title":"Jawa Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-JI",
-		        	"title":"Jawa Timur", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-JK",
-		        	"title":"Jakarta Raya", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-JT",
-		        	"title":"Jawa Tengah", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KB",
-		        	"title":"Kalimantan Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KI",
-		        	"title":"Kalimantan Timur", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KR",
-		        	"title":"Kepulauan Riau", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KS",
-		        	"title":"Kalimantan Selatan", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KT",
-		        	"title":"Kalimantan Tengah", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-KU",
-		        	"title":"Kalimantan Utara", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-LA",
-		        	"title":"Lampung", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-MA",
-		        	"title":"Maluku", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-MU",
-		        	"title":"Maluku Utara", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-NB",
-		        	"title":"Nusa Tenggara Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-NT",
-		        	"title":"Nusa Tenggara Timur", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-PA",
-		        	"title":"Papua", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-PB",
-		        	"title":"Papua Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-RI",
-		        	"title":"Riau", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SA",
-		        	"title":"Sulawesi Utara", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SB",
-		        	"title":"Sumatera Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SG",
-		        	"title":"Sulawesi Tenggara", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SN",
-		        	"title":"Sulawesi Selatan", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SR",
-		        	"title":"Sulawesi Barat", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SS",
-		        	"title":"Sumatera Selatan", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-ST",
-		        	"title":"Sulawesi Tengah", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-SU",
-		        	"title":"Sumatera Utara", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-		        {
-		        	"id":"ID-YO",
-		        	"title":"Yogyakarta", 
-		        	"color": "hsl(129, 80%, 77%)" 
-		        },
-
-
-		        {
+				@foreach($ranking_kota as $kota)
+					{
+						"id":"{{$kota->id}}",
+						"title":"{{$kota->title}}",
+						"color": "hsl(129, {{100-($kota->ranking * 4)}}%, 77%)"
+					},
+				@endforeach
+		        
+					 
+				{
 					"id":"TL",
 					"title":"Timor-Leste",
-		        	"color": "#EEEEEE" 
+						"color": "#eeeeee"
 				},
 				{
 					"id":"MY-12",
 					"title":"Sabah",
-		        	"color": "#EEEEEE" 
+						"color": "#eeeeee"
 				},
 				{
 					"id":"MY-13",
 					"title":"Sarawak",
-		        	"color": "#EEEEEE" 
+						"color": "#eeeeee"
 				},
 				{
 					"id":"BN",
 					"title":"Brunei Darussalam",
-		        	"color": "#EEEEEE" 
+						"color": "#eeeeee"
 				}
 		        ]
 		    };
