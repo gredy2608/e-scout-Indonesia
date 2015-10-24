@@ -34,10 +34,11 @@ class PrestasiSeeder extends Seeder {
             }
             $prestasi->tanggal = $faker->dateTimeBetween($startDate = '-5 years', $endDate = 'now');
             $prestasi->created_by = 1;
-          }
-          $next_prestasi_prob = $faker->numberBetween($min = 0, $max = 100);
-          if($next_prestasi_prob >=90){
-            $i--;
+            $prestasi->save();
+            $next_prestasi_prob = $faker->numberBetween($min = 0, $max = 100);
+            if($next_prestasi_prob >=90){
+              $i--;
+            }
           }
         }
     }
