@@ -91,7 +91,7 @@
 			</nav> -->
 
 
-			<nav class="navbar navbar-material-light-blue-300">
+			<nav class="navbar navbar-material-blue-500 navbar-fixed-top" style=" ">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-material-light-blue-collapse">
 						<span class="icon-bar"></span>
@@ -119,7 +119,7 @@
 			</nav>
 
 
-			<div class="container" style="margin-top:50px;">
+			<div class="container" style="margin-top: 60px;">
 				@yield('content')
 				<!-- EDIT HERE -->
 				<!-- <img src="{{-- asset('assets/img/ykk_logo.jpg') --}}" alt="(logo)" class="img-responsive pull-right" style="margin-top:20px;" /> -->

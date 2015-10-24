@@ -1,11 +1,11 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content">	
+<div id="content" class="container-fluid">	
 	<!-- header -->
-	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
-		<h1>Scout Now</h1>	
-		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
+	<div id="header" class="row" style="">		
+		<h1 class="text-center">Scout Now</h1>	
+		<p class="col-sm-10 col-sm-push-1" style="display:block;margin-left:auto;margin-right:auto;">
 			Disinilah tugas kita sebagai warga negara yang baik melakukan tugasnya. Pada formulir di bawah ini
 			kita dapat melaporkan anak muda bangsa kita yang memiliki talenta luar biasa. Siapa saja anak yang
 			Anda rasa memiliki potensi yang besar, dapat langsung dilaporkan kepada kami. Isinya formulir di 
@@ -13,15 +13,15 @@
 		</p>				
 	</div>	
 	<!-- form content -->
-	<div class="row" style="margin-top:40px;width:50%;text-align:center;margin-left:auto;margin-right:auto;">
-		<form style="display:inline-block;">
+	<div class="row" style="">
+		<form class="col-sm-10 col-sm-push-1" style="display:inline-block;">
 			<div class="form-group">
 		    	<label for="f_no_ktp">Nomor KTP</label>
-		    	<input type="text" class="form-control" id="f_no_ktp" placeholder="" />
+		    	<input type="text" class="form-control" placeholder="Nomor KTP" id="f_no_ktp" />
 		  	</div>
 		  	<div class="form-group">
 		    	<label for="f_nama">Nama Lengkap</label>
-		    	<input type="text" class="form-control" id="f_nama" placeholder="" />
+		    	<input type="text" class="form-control" placeholder="Nama Lengkap" id="f_nama"/>
 		  	</div>
 		  	<div class="form-group">
 		    	<label for="f_email">Email</label>

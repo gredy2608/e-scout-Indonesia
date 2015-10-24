@@ -1,12 +1,11 @@
-@extends('layouts.default')
+@extends('layouts.topmenu')
 @section('content')
 
 <div id="content" class="container-fluid">
 	<!-- header -->
-	<div id="header" class="row" style="text-align:center;">
-		<img src="{{asset('assets/img/logo.png')}}" 
-			style="display:block;margin-left:auto;margin-right:auto;max-width:200px;" />
-		<h1>E-Scout</h1>	
+	<div id="header" class="row text-center" style="">
+		<img src="{{asset('assets/img/logo.png')}}" style="display:block;margin-left:auto;margin-right:auto;max-width:200px;" />
+		<h1 class="text-center">E-Scout</h1>	
 		<p style="display:block;margin-left:auto;margin-right:auto;" class="col-sm-10 col-sm-push-1">
 			E-Scout adalah sebuah aplikasi website yang bertujuan untuk mengumpulkan talenta-telanta muda
 			anak bangsa yang tidak terjamah pemerintah. Melalui E-Scout kami mengundang seluruh masyarakat
@@ -14,19 +13,20 @@
 			kita ataupun anak jalanan yang memiliki bakat luar biasa. Kami tunggu partisipasi Anda untuk membangun 
 			Indonesia yang lebih baik.			
 		</p>		
-		<a href="{{ URL::to('/scout_now') }}">
-			<button class="btn btn-info">Scout Sekarang</button>
+		<span class="clearfix"></span>
+		<a class="btn btn-info" href="{{ URL::to('/scout_now') }}" style="margin-left: auto; margin-right: auto;">
+			Scout Sekarang
 		</a>		
 	</div>
 	<!-- visi -->
-	<div id="visi" class="row" style="margin-top:40px;text-align:center;">
+	<div id="visi" class="row text-center" style="">
 		<h1>Visi</h1>		
 		<p>
 			Kami ingin menghimpun seluruh masyarakat Indonesia untuk meningkatkan mutu SDM Indonesia yang lebih baik.
 		</p>
 	</div>
 	<!-- misi -->
-	<div id="misi" class="row" style="margin-top:40px;text-align:center;">
+	<div id="misi" class="row text-center" style="">
 		<h1>Misi</h1>		
 		<ul style="display:inline-block;">
 			<li>misi 1</li>
@@ -35,12 +35,12 @@
 		</ul>
 	</div>
 	<!-- siapa kamu -->
-	<div id="siapa_kamu" class="row" style="margin-top:40px;text-align:center;">
+	<div id="siapa_kamu" class="row text-center" style="">
 		<h1>Siapa kamu ?</h1>		
 		<!-- scouter -->
 		<div class="col-md-4">
 			<img src="{{asset('assets/img/logo.png')}}" 
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}">Scouter</a></h1>
 		</div>
 		<!-- siswa -->
@@ -52,23 +52,23 @@
 		<!-- sekolah -->
 		<div class="col-md-4">
 			<img src="{{asset('assets/img/logo.png')}}" 
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}">Sekolah</a></h1>
 		</div>
 		<!-- dinas -->
 		<div class="col-md-4">
 			<img src="{{asset('assets/img/logo.png')}}" 
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}">Dinas</a></h1>
 		</div>
 	</div>
 	<!-- anak berprestasi -->
-	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
+	<div id="anak_berprestasi" class="row" style="">
 		<h1 style="text-align:center;">Anak Berprestasi</h1>
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">
@@ -82,7 +82,7 @@
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">
@@ -96,7 +96,7 @@
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_pp_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">
@@ -119,7 +119,7 @@
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_school_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">
@@ -133,7 +133,7 @@
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_school_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">
@@ -147,7 +147,7 @@
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-3">
 				<img src="{{asset('assets/img/default_school_icon.png')}}" 
-					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			</div>
 			<div class="col-md-9">
 				<ul style="list-style:none;">

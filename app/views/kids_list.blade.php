@@ -1,11 +1,12 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content">	
+<div id="content" class="container-fluid">	
 	<!-- header -->
 	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
+	<div class="col-sm-10 col-sm-push-1">		
 		<h1>Daftar Anak Berprestasi</h1>	
-		<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
+		<p style="">
 			Berikut ini daftar anak-anak berprestasi yang telah dikumpulkan Anda semua.	Anda dapat
 			mengirimkan permintaan berupa penambahan data anak atau mengoreksi data anak jika terjadi
 			kesalahan data. Silahkan klik tombol di bawah ini untuk melakukan permintaan.			
@@ -16,8 +17,11 @@
 			</a>
 		</div> -->
 	</div>	
+	</div>	
 	<!-- form content -->
-	<div class="row" style="margin-top:40px;width:50%;text-align:center;margin-left:auto;margin-right:auto;">
+	<div class="row" style="">
+		<div class="col-sm-10 col-sm-push-1">		
+
 		<h2>Form Pencarian</h2>
 		<form style="display:inline-block;">
 			<div class="form-group">
@@ -34,6 +38,7 @@
 		  	</div>		  		  
 		  	<button type="" class="btn btn-info">Cari</button>
 		</form>
+	</div>
 	</div>
 	<!-- table content daftar sekolah -->	
 	<!-- <div class="row" style="margin-top:40px;margin-left:auto;margin-right:auto;">
@@ -81,7 +86,7 @@
 		    </thead>
 		    <tbody>
 		    	@for($i = 0 ; $i < 5 ; $i++)
-		      	<tr>
+		      	<tr data-toggle="modal" data-target=".popup_request_kid_detail">
 		        	<td>(nama lengkap)</td>
 		        	<td>(umur)</td>	
 		        	<td>(kelas)</td>
@@ -92,8 +97,8 @@
 			        		<li><a href="#" data-toggle="modal" data-target=".popup_achievement_detail">(prestasi)</a></li>
 			        	</ul>
 			        </td>
-			        <td>
-			        	<button class="btn btn-info pull-right" data-toggle="modal" data-target=".popup_request_kid_detail">
+			        <td class="hidden-xs">
+			        	<button class="btn btn-info pull-right" >
 			        		detail info
 			        	</button>
 			        </td>
