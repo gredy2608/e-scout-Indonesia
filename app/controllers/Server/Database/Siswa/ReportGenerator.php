@@ -44,10 +44,10 @@ class ReportGenerator extends BaseController{
 			$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND riwayat_sekolah.id_sekolah = '$sekolah[$i]->id'");
+								WHERE status=0 AND riwayat_sekolah.id_sekolah = ".$sekolah[$i]->id." ;");
 			for($j=0;$j<count($siswa);$j++){
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
-										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'
+										WHERE prestasi.id_siswa = ".$siswa[$j]->id_siswa."
 										GROUP BY prestasi.id_siswa");
 				$sum[$i]['prestasi']+=$prestasi[0]->banyak_prestasi;
 			}
@@ -66,7 +66,7 @@ class ReportGenerator extends BaseController{
 			$siswa = DB::select("SELECT * FROM siswa 
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
-								WHERE status=0 AND riwayat_sekolah.id_sekolah = '$sekolah[$i]->id'");
+								WHERE status=0 AND riwayat_sekolah.id_sekolah = ".$sekolah[$i]->id);
 			for($j=0;$j<count($siswa);$j++){
 				$prestasi = DB::select("SELECT COUNT(*) as banyak_prestasi FROM prestasi 
 										WHERE prestasi.id_siswa = '$siswa[$j]->id_siswa'
