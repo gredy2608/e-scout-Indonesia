@@ -11,7 +11,7 @@ class RiwayatSeeder extends Seeder {
           $prob_sekolah = $faker->numberBetween($min = 0, $max = 100);
           if($prob_sekolah<=5){
             $current_school = $faker->numberBetween($min = 1, $max = 6);
-            $tahun = $faker->numberBetween($min = 1997, $max = 2005);
+            $tahun = $faker->numberBetween($min = 1997, $max = 2009);
             for($i=0;$i<12&&$tahun<=2015;$i++){
               $riwayat = new Riwayat();
               $riwayat->id_siswa = $k+1;
@@ -56,7 +56,7 @@ class RiwayatSeeder extends Seeder {
                 $riwayat->save();
                 break;
               }
-              else if($prob_status<=20){
+              else if($prob_status<=10){
                 //tinggal kelas
                 $riwayat->status = 2;
                 $riwayat->save();
