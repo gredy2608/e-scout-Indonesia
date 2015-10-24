@@ -66,6 +66,7 @@ Route::post('/signin', function()
 	if($tipe=="pengawas"){
 		if($username == "scout" && $password == "scout"){
 			//redirect pengawas
+			return Redirect::to('/home_goverment');
 		}
 		else{
 			return Redirect::to('/login?tipe=pengawas')->with("messages","Username atau Password Salah");
@@ -74,6 +75,7 @@ Route::post('/signin', function()
 	else if($tipe=="sekolah"){
 		if($username == "sekolah" && $password == "sekolah"){
 			//redirect sekolah
+			return Redirect::to('/home_school');
 		}
 		else{
 			return Redirect::to('/login?tipe=sekolah')->with("messages","Username atau Password Salah");
