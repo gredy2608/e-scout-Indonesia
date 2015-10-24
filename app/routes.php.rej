@@ -1,0 +1,21 @@
+diff a/app/routes.php b/app/routes.php	(rejected hunks)
+@@ -143,13 +143,16 @@
+ 	return View::make('admin.campaign');
+ });
+ Route::get('/admin/kid', function(){
+-	return View::make('admin.kid');
++	$list_siswa = Siswa::all();
++	return View::make('admin.kid',compact('list_siswa'));
+ });
+ Route::get('/admin/school', function(){
+-	return View::make('admin.school');
++	$list_sekolah = Sekolah::all();
++	return View::make('admin.school',compact('list_sekolah'));
+ });
+ Route::get('/admin/report_citizen', function(){
+-	return View::make('admin.report_citizen');
++	$list_laporan = Laporan::all();
++	return View::make('admin.report_citizen',compact('list_laporan'));
+ });
+ Route::get('/admin/report_achievement', function(){
+ 	return View::make('admin.report_achievement');
