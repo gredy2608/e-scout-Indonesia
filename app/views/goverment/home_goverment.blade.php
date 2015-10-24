@@ -3,10 +3,10 @@
 
 <div id="content" class="col-sm-12">	
 	<!-- header -->
-	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
+	<div id="breadcrumb" class="row hidden-xs" style="margin-top:15px;text-align:left;">		
 		<a href="#">Dinas</a>		
 	</div>
-	<div id="header" class="row" style="margin-top:40px;text-align:center;">		
+	<div id="header" class="row" style="margin-top:30px;text-align:center;">		
 		<h1>Dinas (NAMA DINAS)</h1>	
 		<p style="display:block;margin-left:auto;margin-right:auto;">
 			Selamat datang di halaman utama untuk akun dinas. 

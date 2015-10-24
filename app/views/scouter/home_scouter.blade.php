@@ -3,10 +3,10 @@
 
 <div id="content" class="col-sm-12">	
 	<!-- header -->
-	<div id="breadcrumb" class="row hidden-xs" style="">		
+	<div id="breadcrumb" class="row hidden-xs" style="margin-top: 15px;">		
 		<a href="#">Scouter</a>				
 	</div>
-	<div id="header" class="row" style="margin-top:15px;text-align:center;">		
+	<div id="header" class="row" style="margin-top:30px;text-align:center;">		
 		<h1>Someone Somehow</h1>	
 		<p style="display:block;">
 			Selamat datang di halaman utama untuk akun scouter. 
