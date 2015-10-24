@@ -309,7 +309,7 @@ class ReportGenerator extends BaseController{
 								JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id 
 								JOIN sekolah ON  riwayat_sekolah.id_sekolah = sekolah.id
 								WHERE status<=1");
-								//echo var_dump($siswa);
+								echo var_dump($siswa);
 		$nilai = array();
 		$prestasi = array();
 		for($i=0;$i<count($siswa);$i++){
@@ -326,7 +326,7 @@ class ReportGenerator extends BaseController{
 		
 		$nilaiBaru = $this->array_sort($nilai, 'rata', SORT_DESC);
 		$prestasiBaru = $this->array_sort($prestasi, 'sum', SORT_DESC);
-		return Response::json(array("nilai"=>$nilaiBaru, "prestasi"=>$prestasiBaru));
+		//return Response::json(array("nilai"=>$nilaiBaru, "prestasi"=>$prestasiBaru));
 	}
 	
 	
@@ -406,8 +406,24 @@ class ReportGenerator extends BaseController{
 			return Response::json($nilaiBaru);
 	}
 	
-	public function getTotalStudentByCategory(){
-	
+	public function getTopStudentByCategory(){
+		$kategori = array("Matematika","Fisika","Kimia","Debat","Debat Bahasa Asing","Pidato","Sepak Bola","Basket","Bulu Tangkis","Tenis Meja");
+		$prestasi = array();
+		for($i=0;$i<count($kategori);$i++){
+			$prestasiKategori=array();
+			$prestasiTemp = DB::select("SELECT *, count(id_siswa) as sum  FROM siswa 
+									JOIN prestasi ON prestasi.id_siswa = siswa.id 
+									WHERE kategori = '$kategori[$i]'
+									GROUP BY id_siswa ORDER BY sum desc LIMIT 5");
+			for($j=0;$j<count($prestasiTemp);$j++){
+				$prestasiKategori[$j] = array('id'=>$prestasiTemp[$j]->id_siswa,'kategori'=>$kategori[$i], 'sum' => $prestasiTemp[$j]->sum);
+			}
+			
+			$prestasi[$i] = array('kategori'=>$kategori[$i],'presKategori'=>$prestasiKategori);
+		
+						
+		}
+			return Response::json($prestasi);
 	}
 }
 
