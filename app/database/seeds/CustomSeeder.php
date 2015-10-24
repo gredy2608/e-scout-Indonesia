@@ -108,6 +108,7 @@ class CustomSeeder extends Seeder {
               $riwayat = new Riwayat();
               $riwayat->id_siswa = $k+1;
               $riwayat->id_sekolah = $current_school;
+              $riwayat->kelas = $i+1;
               if($i<6){
                 $riwayat->tingkat_pendidikan = 0;
                 $riwayat->jurusan="";
