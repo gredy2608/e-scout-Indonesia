@@ -56,6 +56,7 @@ class CustomSeeder extends Seeder {
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
+          $sekolah->email = "sd".$number."@mail.com";
           $sekolah->username =  "SD".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
@@ -72,6 +73,7 @@ class CustomSeeder extends Seeder {
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
+          $sekolah->email = "smp".$number."@mail.com";
           $sekolah->username =  "SMP".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
@@ -88,6 +90,7 @@ class CustomSeeder extends Seeder {
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
+          $sekolah->email = "sma".$number."@mail.com";
           $sekolah->username =  "SMA".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
