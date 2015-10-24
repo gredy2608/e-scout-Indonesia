@@ -42,7 +42,7 @@
     <!-- check ammap/maps/js/ folder to see all available countries -->
     <!-- map file should be included after ammap.js -->
 	<script src="{{ asset('assets/lib/map/ammap/maps/js/indonesiaHigh.js') }}" type="text/javascript"></script>
-    @include('layouts.map')
+    
 
 	<!-- loader -->
 	<link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" />			
