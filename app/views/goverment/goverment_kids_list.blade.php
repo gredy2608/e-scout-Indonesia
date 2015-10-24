@@ -1,7 +1,7 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content">	
+<div id="content" class="col-sm-12">	
 	<!-- header -->
 	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
 		<a href="#">Dinas</a>	
