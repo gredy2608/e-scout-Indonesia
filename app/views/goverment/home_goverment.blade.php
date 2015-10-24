@@ -94,7 +94,7 @@
 					{
 						"id":"{{$kota->id}}",
 						"title":"{{$kota->title}}",
-						"color": "hsl(129, {{100-($kota->ranking * 4)}}%, 77%)"
+						"color": "hsl({{100-($kota->ranking * 4)}}, 100%, 77%)"
 					},
 				@endforeach
 
@@ -126,7 +126,7 @@
 
 		    map.areasSettings = {
 		    	autoZoom: true,
-		    	color: "hsl(129, 80%, 77%)",
+		    	color: "#DD2C00",
 		    	selectedColor: "#CC0000"
 		    };
 
