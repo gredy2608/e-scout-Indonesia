@@ -1,7 +1,7 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content">
+<div id="content" class="col-sm-12">
 	<!-- header -->
 	<div id="header" class="row text-center" style="">
 		<img src="{{asset('assets/img/logo.png')}}" style="display:block;margin-left:auto;margin-right:auto;max-width:200px;" />
@@ -39,7 +39,7 @@
 		<h1>Siapa kamu ?</h1>
 		<!-- scouter -->
 		<div class="col-md-4">
-			<img src="{{asset('assets/img/logo.png')}}"
+			<img src="{{asset('assets/img/scouter.png')}}"
 			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}?tipe=pengawas">Scouter</a></h1>
 		</div>
@@ -51,13 +51,13 @@
 		</div> -->
 		<!-- sekolah -->
 		<div class="col-md-4">
-			<img src="{{asset('assets/img/logo.png')}}"
+			<img src="{{asset('assets/img/sekolah.png')}}"
 			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}?tipe=sekolah">Sekolah</a></h1>
 		</div>
 		<!-- dinas -->
 		<div class="col-md-4">
-			<img src="{{asset('assets/img/logo.png')}}"
+			<img src="{{asset('assets/img/dinas.png')}}"
 			style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
 			<h1><a href="{{ URL::to('/login') }}?tipe=dinas">Dinas</a></h1>
 		</div>
@@ -65,48 +65,7 @@
 	<!-- anak berprestasi -->
 	<div id="anak_berprestasi" class="row" style="">
 		<h1 style="text-align:center;">Anak Berprestasi</h1>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
+		 
 		<div class="row" style="margin-top:20px;text-align:center;">
 			<a class="btn btn-warning" href="{{ URL::to('/kids_list') }}">
 				Lihat Anak Lainnya
@@ -116,48 +75,7 @@
 	<!-- sekolah berprestasi -->
 	<div id="sekolah_berprestasi" class="row" style="margin-top:40px;">
 		<h1 style="text-align:center;">Sekolah - Sekolah</h1>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_school_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(sekolah)</li>
-					<li>(kota)</li>
-					<li>(akreditasi)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_school_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(sekolah)</li>
-					<li>(kota)</li>
-					<li>(akreditasi)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_school_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(sekolah)</li>
-					<li>(kota)</li>
-					<li>(akreditasi)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
-		</div>
+		 
 		<div class="row" style="margin-top:20px;text-align:center;">
 			<a class="btn btn-warning" href="{{ URL::to('/schools_list') }}">
 				Lihat Sekolah Lainnya
