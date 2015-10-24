@@ -44,89 +44,51 @@ class CustomSeeder extends Seeder {
           $siswa->save();
         }
 
-        $array_tipe_sekolah = array("SDN","SDK","SMPN","SMPK","SMAN","SMAK");
-        $array_nama_sekolah_katolik_kristen = array("BPK Penabur","Santa Angela","Santo Aloysius");
         //seed sekolah
         //SDN
-        for($j = 0 ;$j <=3;$j++){
+        for($j = 0 ;$j <=5;$j++){
           $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[0]." ".($j+1);
+          $number = $faker->unique()->numberBetween($min = 0, $max = 30);
+          $sekolah->nama_sekolah = "SD ".$number;
           $sekolah->tingkat_pendidikan = 0;
+          $sekolah->kementrian = $faker->numberBetween($min = 0, $max = 1);
           $sekolah->alamat = $faker->streetAddress;
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[0].($j+1);
-          $sekolah->password = Hash::make("adminsekolah");
-          $sekolah->created_by = 1;
-          $sekolah->save();
-        }
-        //SDK
-        for($j = 0 ;$j <3;$j++){
-          $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[1]." ".$array_nama_sekolah_katolik_kristen[$j];
-          $sekolah->tingkat_pendidikan = 0;
-          $sekolah->alamat = $faker->streetAddress;
-          $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
-          $sekolah->kode_pos = $faker->postcode;
-          $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[1].($j+1);
+          $sekolah->username =  "SD".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
           $sekolah->save();
         }
         //SMPN
-        for($j = 0 ;$j <=3;$j++){
+        for($j = 0 ;$j <=5;$j++){
           $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[2]." ".($j+1);
-          $sekolah->tingkat_pendidikan = 1;
+          $number = $faker->unique()->numberBetween($min = 0, $max = 30);
+          $sekolah->nama_sekolah = "SMP ".$number ;
+          $sekolah->tingkat_pendidikan = $faker->numberBetween($min = 0, $max = 1);
+          $sekolah->kementrian = $faker->numberBetween($min = 0, $max = 1);
           $sekolah->alamat = $faker->streetAddress;
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[2].($j+1);
-          $sekolah->password = Hash::make("adminsekolah");
-          $sekolah->created_by = 1;
-          $sekolah->save();
-        }
-        //SMPK
-        for($j = 0 ;$j <3;$j++){
-          $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[3]." ".$array_nama_sekolah_katolik_kristen[$j];
-          $sekolah->tingkat_pendidikan = 1;
-          $sekolah->alamat = $faker->streetAddress;
-          $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
-          $sekolah->kode_pos = $faker->postcode;
-          $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[3].($j+1);
+          $sekolah->username =  "SMP".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
           $sekolah->save();
         }
         //SMAN
-        for($j = 0 ;$j <=3;$j++){
+        for($j = 0 ;$j <=5;$j++){
           $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[4]." ".($j+1);
+          $number = $faker->unique()->numberBetween($min = 0, $max = 30);
+          $sekolah->nama_sekolah = "SMA ".$number;
           $sekolah->tingkat_pendidikan = 2;
+          $sekolah->kementrian = $faker->numberBetween($min = 0, $max = 1);
           $sekolah->alamat = $faker->streetAddress;
           $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
           $sekolah->kode_pos = $faker->postcode;
           $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[4].($j+1);
-          $sekolah->password = Hash::make("adminsekolah");
-          $sekolah->created_by = 1;
-          $sekolah->save();
-        }
-        //SMAK
-        for($j = 0 ;$j <3;$j++){
-          $sekolah = new Sekolah();
-          $sekolah->nama_sekolah = $array_tipe_sekolah[5]." ".$array_nama_sekolah_katolik_kristen[$j];
-          $sekolah->tingkat_pendidikan = 2;
-          $sekolah->alamat = $faker->streetAddress;
-          $sekolah->kota = $arr_kota_indonesia[$faker->numberBetween($min = 0, $max = 11)];
-          $sekolah->kode_pos = $faker->postcode;
-          $sekolah->telepon = $faker->phoneNumber;
-          $sekolah->username =  $array_tipe_sekolah[5].($j+1);
+          $sekolah->username =  "SMA".$number;
           $sekolah->password = Hash::make("adminsekolah");
           $sekolah->created_by = 1;
           $sekolah->save();

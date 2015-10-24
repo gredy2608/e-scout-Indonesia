@@ -24,6 +24,11 @@ class CreateTableSekolah extends Migration {
 					...
 				*/
 				$table->integer('tingkat_pendidikan');
+				/*
+					0 = Kemendikbud
+					1 = Kemenag
+				*/
+				$table->integer('kementrian');
 				$table->string('alamat');
 				$table->string('kota');
 				$table->integer('kode_pos');

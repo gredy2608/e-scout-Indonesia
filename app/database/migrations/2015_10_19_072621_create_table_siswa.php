@@ -17,7 +17,7 @@ class CreateTableSiswa extends Migration {
 			$table->create();
 			$table->increments('id');
 			$table->integer('id_akta_lahir')->unsigned();
-			$table->string('NISN');
+			$table->string('NISN')->nullable();
 			$table->tinyInteger('jenis_kelamin');
 			$table->string('alamat');
 			$table->string('kota');
