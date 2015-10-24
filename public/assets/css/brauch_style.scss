@@ -461,3 +461,32 @@ hr {
 .f_table_suggestion tr td {
   cursor: pointer !important;
 }
+
+
+.content-container {
+
+  @media (min-width: 768px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 50px
+  }
+}
+
+
+.gradient-blue {
+  * {
+  color: #fff
+  }
+
+  @include linear-gradient(135deg, #3266AC, #32CBDB);
+}
+
+.gradient-orange {
+  * {
+  color: #fff
+  }
+
+  @include linear-gradient(135deg, #FF4E50, #F9D423);
+}

@@ -1,7 +1,7 @@
 @extends('layouts.topmenu')
 @section('content')
 
-<div id="content" class="container-fluid">	
+<div id="content">	
 	<!-- header -->
 	<div id="header" class="row" style="">		
 		<h1 class="text-center">Scout Now</h1>	
@@ -37,6 +37,10 @@
 		  	</div>		 
 		  	<div class="form-group">
 		    	<label for="f_umur_anak">Umur Anak</label>
+		    	<input type="number" class="form-control" id="f_umur_anak" placeholder="" />
+		  	</div>		
+		  	<div class="form-group">
+		    	<label for="f_umur_anak">Alamat Anak</label>
 		    	<input type="number" class="form-control" id="f_umur_anak" placeholder="" />
 		  	</div>		 
 		  	<div class="form-group">
