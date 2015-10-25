@@ -174,11 +174,25 @@ class DataGetter extends BaseController{
 		}else if($kota=='Tangerang'){
 		return 'Gorontalo';
 		}else if($kota=='Banten'){
-		return 'bANTEN';
+		return 'Banten';
 		}else if($kota=='Denpasar'){
 		return 'Bali';
 		}
 	}
+	
+	
+	public function getAnakGaSekolah(){
+		$anak = DB::select('SELECT * , floor(datediff(curdate(),akta_lahir.tanggal_lahir) / 365) as "umur" FROM akta_lahir WHERE akta_lahir.id NOT IN (SELECT id_akta_lahir from siswa) 
+							AND  floor(datediff(curdate(),akta_lahir.tanggal_lahir) / 365) < 21');
+		return Response::json($anak);
+	}
+	
+	public function getAnakGaSekolahByTahunPelajaran(){
+		$tp = '2013/2014';
+		$siswa = DB::select("SELECT * FROM siswa JOIN riwayat_sekolah ON riwayat_sekolah.id_siswa = siswa.id WHERE riwayat_sekolah.status=3 AND tahun_ajaran = '$tp'");
+		return Response::json($siswa);
+	}
+	
 	
 }
 
