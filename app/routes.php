@@ -203,7 +203,7 @@ Route::get('/admin/report_achievement', function(){
 	return View::make('admin.report_achievement',compact('list_laporan'));
 });
 
-Route::get('/test123', 'DataGetter@getTopSchoolCity');//page
+Route::get('/test123', 'DataGetter@getAnakGaSekolahByTahunPelajaran');//page
 //------------------------------------------------------TEST EMAIL-------------------------------------------------
 /*Route::get('/email_send',function(){
 	Mail::send('emails.tes', array('key' => 'Tes Email 123'), function($message)
