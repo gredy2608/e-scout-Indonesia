@@ -11,66 +11,193 @@
 		<p style="display:block;margin-left:auto;margin-right:auto;">
 			Selamat datang di halaman utama untuk akun dinas.
 		</p>
-		<!-- form content -->
-		<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
-			<div class="col-md-6">
-				<h2>Penambahan/Perubahan Data Anak</h2>
-				<form style="display:inline-block;" class="import_excel_student_form">
-					<div class="form-group">
-						<!-- <label for="f_file">File</label> -->
-						<input type="file" id="f_file" />
-						<p class="help-block">Silahkan masukkan file excel berisi daftar anak sesuai format yang sudah ada.</p>
-					</div>
-					<button type="submit" class="btn btn-success">Kirim</button>
-				</form>
-			</div>
-			<div class="col-md-6">
-				<h2>Penambahan/Perubahan Data Sekolah</h2>
-				<form style="display:inline-block;" class="import_excel_school_form">
-					<div class="form-group">
-						<!-- <label for="f_file">File</label> -->
-						<input type="file" id="f_file_sekolah" />
-						<p class="help-block">Silahkan masukkan file excel berisi daftar sekolah sesuai format yang sudah ada.</p>
-					</div>
-					<button type="submit" class="btn btn-success">Kirim</button>
-				</form>
-			</div>
+		
+	</div>
 
+	<!-- <div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;"> -->
+		<div class="col-md-6">
+			<h3>Penambahan/Perubahan Data Anak</h3>
+			<form style="display:inline-block;" class="import_excel_student_form">
+				<div class="form-group">
+					<!-- <label for="f_file">File</label> -->
+					<input type="file" id="f_file" />
+					<p class="help-block">Silahkan masukkan file excel berisi daftar anak sesuai format yang sudah ada.</p>
+				</div>
+				<button type="submit" class="btn btn-success">Kirim</button>
+			</form>
 		</div>
-		<div class="row" style="margin-top:40px;text-align:center;">
-			<a href="{{ URL::to('/goverment_schools_list') }}">
-				<button class="btn btn-info">Lihat Data Seluruh Sekolah</button>
-			</a>
-		</div>
+		<div class="col-md-6">
+			<h3>Penambahan/Perubahan Data Sekolah</h3>
+			<form style="display:inline-block;" class="import_excel_school_form">
+				<div class="form-group">
+					<!-- <label for="f_file">File</label> -->
+					<input type="file" id="f_file_sekolah" />
+					<p class="help-block">Silahkan masukkan file excel berisi daftar sekolah sesuai format yang sudah ada.</p>
+				</div>
+				<button type="submit" class="btn btn-success">Kirim</button>
+			</form>
+		</div> 
+	<!-- </div> -->
+
+	<div class="row" style="margin-top:40px;text-align:center;">
+		<a href="{{ URL::to('/goverment_schools_list') }}">
+			<button class="btn btn-info">Lihat Data Seluruh Sekolah</button>
+		</a>
 	</div>
 	<div class="row">
 		<div id="mapdiv" style="background-color:#EEEEEE; height: 300px; margin-left: -15px;  margin-right: -15px; "></div>
 	</div>
 	<!-- grafik -->
 	<!--<div id="grafik_prestasi_sekolah" style="margin-top:40px;">
-		<!-- input grafik nya ada di javascript di bawah -->
+	<!-- input grafik nya ada di javascript di bawah -->
 	<!--</div>
 	<!-- anak berprestasi -->
-	<div id="anak_berprestasi" class="row" style="margin-top:40px;">
-		<h1 style="text-align:center;">Anak Berprestasi</h1>
-		@for($i = 0 ; $i < 10 ; $i++)
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-3">
-				<img src="{{asset('assets/img/default_pp_icon.png')}}"
-				style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
-			</div>
-			<div class="col-md-9">
-				<ul style="list-style:none;">
-					<li>(nama)</li>
-					<li>(umur)</li>
-					<li>(sekolah?)</li>
-					<li>(prestasi)</li>
-				</ul>
-			</div>
+	<div class="col-md-6">
+		<div id="anak_berprestasi" class="row" style="margin-top:40px;">
+			<h1 class="text-center">Anak Berprestasi</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+
+						</th>
+						<th>
+							Nama
+						</th>
+						<th>
+							Alamat
+						</th>
+						<th>
+							Sekolah
+						</th>
+						<th>
+							T. Lahir
+						</th>
+						<th class="hidden-xs"> 
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							<img src="{{asset('assets/img/default_pp_icon.png')}}"
+							style="display:block;margin-left:auto;margin-right:auto;max-height:50px;" />
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							<a href="javascript:void(0)">Someone Lastname</a>
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							Jl. Random 999
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							Sekolah Random 9
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							1999-05-24
+						</td>
+						<td class="hidden-xs">
+							<button type="button" class="btn btn-success"  data-toggle="modal" data-target=".popup_request_kid_detail">
+								Detail
+							</button>
+						</td>
+					</tr>
+
+					@endfor
+
+				</tbody>
+			</table>	
+
+			@for($i = 0 ; $i < 10 ; $i++)
+			<!-- <div class="row" style="margin-top:20px;">
+				<div class="col-md-3">
+					<img src="{{asset('assets/img/default_pp_icon.png')}}"
+					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				</div>
+				<div class="col-md-9">
+					<ul style="list-style:none;">
+						<li>(nama)</li>
+						<li>(umur)</li>
+						<li>(sekolah?)</li>
+						<li>(prestasi)</li>
+					</ul>
+				</div>
+			</div> -->
+			@endfor
 		</div>
-		@endfor
+	</div>
+	<div class="col-md-6">
+		<div id="anak_tidak_sekolah" class="row" style="margin-top:40px;">
+			<h1 class="text-center">Anak Tidak Sekolah</h1>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							
+						</th>
+						<th>
+							Nama
+						</th>
+						<th>
+							Alamat
+						</th> 
+						<th>
+							T. Lahir
+						</th>
+						<th class="hidden-xs"> 
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for($i = 0 ; $i < 10 ; $i++)
+					<tr>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							<img src="{{asset('assets/img/default_pp_icon.png')}}"
+							style="display:block;margin-left:auto;margin-right:auto;max-height:50px;" />
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							<a href="javascript:void(0)">Someone Lastname</a>
+						</td>
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							Jl. Random 999
+						</td> 
+						<td data-toggle="modal" data-target=".popup_request_kid_detail">
+							1999-05-24
+						</td>
+						<td class="hidden-xs">
+							<button type="button" class="btn btn-success"  data-toggle="modal" data-target=".popup_request_kid_detail">
+								Detail
+							</button>
+						</td>
+					</tr>
+
+					@endfor
+
+				</tbody>
+			</table>
+			@for($i = 0 ; $i < 10 ; $i++)
+			<!-- <div class="row" style="margin-top:20px;">
+				<div class="col-md-3">
+					<img src="{{asset('assets/img/default_pp_icon.png')}}"
+					style="display:block;margin-left:auto;margin-right:auto;max-width:150px;" />
+				</div>
+				<div class="col-md-9">
+					<ul style="list-style:none;">
+						<li>(nama)</li>
+						<li>(umur)</li>
+						<li>(sekolah?)</li>
+						<li>(prestasi)</li>
+					</ul>
+				</div>
+			</div> -->
+			@endfor
+		</div>
 	</div>
 </div>
+
+@include('popup_request_kid_detail')
+@include('popup_achievement_detail')
 
 <script>
 
@@ -90,35 +217,35 @@
 		        	// "id":"ID-JK",
 		        	// "color": "#000000"
 		        },
-				@foreach($ranking_kota as $kota)
-					{
-						"id":"{{$kota->id}}",
-						"title":"{{$kota->title}}",
-						"color": "hsl({{100-($kota->ranking * 4)}}, 100%, 77%)"
-					},
-				@endforeach
+		        @foreach($ranking_kota as $kota)
+		        {
+		        	"id":"{{$kota->id}}",
+		        	"title":"{{$kota->title}}",
+		        	"color": "hsl({{100-($kota->ranking * 4)}}, 100%, 77%)"
+		        },
+		        @endforeach
 
 
-				{
-					"id":"TL",
-					"title":"Timor-Leste",
-						"color": "#eeeeee"
-				},
-				{
-					"id":"MY-12",
-					"title":"Sabah",
-						"color": "#eeeeee"
-				},
-				{
-					"id":"MY-13",
-					"title":"Sarawak",
-						"color": "#eeeeee"
-				},
-				{
-					"id":"BN",
-					"title":"Brunei Darussalam",
-						"color": "#eeeeee"
-				}
+		        {
+		        	"id":"TL",
+		        	"title":"Timor-Leste",
+		        	"color": "#eeeeee"
+		        },
+		        {
+		        	"id":"MY-12",
+		        	"title":"Sabah",
+		        	"color": "#eeeeee"
+		        },
+		        {
+		        	"id":"MY-13",
+		        	"title":"Sarawak",
+		        	"color": "#eeeeee"
+		        },
+		        {
+		        	"id":"BN",
+		        	"title":"Brunei Darussalam",
+		        	"color": "#eeeeee"
+		        }
 		        ]
 		    };
 
