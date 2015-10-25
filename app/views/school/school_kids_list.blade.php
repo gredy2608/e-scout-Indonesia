@@ -3,7 +3,7 @@
 
 <div id="content">	
 	<!-- header -->
-	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
+	<div id="breadcrumb" class="row hidden" style="margin-top:30px;text-align:left;">		
 		<a href="#">Sekolah</a>		
 		/
 		<a href="#">Daftar Anak</a>

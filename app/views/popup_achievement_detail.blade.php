@@ -8,17 +8,22 @@
 			<div class="modal-body">
 				<div id="header" class="row" style="margin-top:40px;text-align:center;">
 					<img src="{{asset('assets/img/default_image_icon.png')}}" 
-						style="display:block;margin-left:auto;margin-right:auto;max-width:100%;" />
-					<h1>(Gelar Prestasi)</h1>	
-					<p style="display:block;margin-left:auto;margin-right:auto;width:60%;">
-						(
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-							keterangan prestasi keterangan prestasi keterangan prestasi keterangan prestasi
-						)
-					</p>							
+						style="display:block;margin-left:auto;margin-right:auto;max-width:60%; margin-bottom: 15px;" />
+						<span class="clearfix"></span>
+
+						<img src="{{asset('assets/img/default_image_icon.png')}}" 
+						style="max-width:20%; margin-right: 15px;" />
+						<img src="{{asset('assets/img/default_image_icon.png')}}" 
+						style="max-width:20%; margin-right: 15px;" />
+						<img src="{{asset('assets/img/default_image_icon.png')}}" 
+						style="max-width:20%; margin-right: 15px;" />
+						<img src="{{asset('assets/img/default_image_icon.png')}}" 
+						style="max-width:20%; margin-right: 15px;" />
+
+						<span class="clearfix"></span>
+						<label class="text-center" style="display: block; text-align: center; margin-left: auto; margin-right: auto; margin-top: 15px;">Unggah Bukti Prestasi</label>
+						<input type="file" value="Unggah Bukti Prestasi" style="width: 210px;display: block; text-align: center; margin-left: auto; margin-right: auto;">
+					<!-- <h1>(Gelar Prestasi)</h1>	 						 -->
 				</div>
 			</div>			
 		</div>

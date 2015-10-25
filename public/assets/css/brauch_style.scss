@@ -521,3 +521,9 @@ hr {
   margin-right: auto;
   margin-left: auto;
 }
+
+.front-sidebar {
+  height: calc(100vh - 60px);
+  display: block;
+  position: fixed;
+}

@@ -3,7 +3,7 @@
 
 <div id="content">	
 	<!-- header -->
-	<div id="breadcrumb" class="row" style="margin-top:30px;text-align:left;">		
+	<div id="breadcrumb" class="row hidden" style="margin-top:30px;text-align:left;">		
 		<a href="#">Scouter</a>		
 		/
 		<a href="#">Daftar Anak</a>
@@ -24,7 +24,7 @@
 	<!-- form content -->
 	<div class="row" style="margin-top:40px;text-align:center;margin-left:auto;margin-right:auto;">
 		<h2>Form Pencarian</h2>
-		<form style="display:block;">
+		<form class="col-md-4 col-md-push-4" style="display:block;">
 			<div class="form-group text-left">
 		    	<label class="text-left" for="f_nama_anak">Nama Anak</label>
 		    	<input type="text" class="form-control" id="f_nama_anak" placeholder="" />
@@ -33,8 +33,8 @@
 		    	<label class="text-left" for="f_nama_sekolah">Nama Sekolah</label>
 		    	<input type="text" class="form-control" id="f_nama_sekolah" placeholder="" />
 		  	</div>
-		  	<div class="form-group">
-		    	<label for="f_kota">Kota</label>
+			<div class="form-group text-left">
+		    	<label class="text-left" for="f_kota">Kota</label>
 		    	<input type="text" class="form-control" id="f_kota" placeholder="" />
 		  	</div>		  		  
 		  	<button type="" class="btn btn-info">Cari</button>

@@ -3,7 +3,7 @@
 
 <div id="content" class="col-sm-12">
 	<!-- header -->
-	<div id="breadcrumb" class="row hidden-xs" style="margin-top:15px;text-align:left;">
+	<div id="breadcrumb" class="row hidden-xs hidden" style="margin-top:15px;text-align:left;">
 		<a href="#">Dinas</a>
 	</div>
 	<div id="header" class="row" style="margin-top:30px;text-align:center;">
