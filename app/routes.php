@@ -121,7 +121,7 @@ Route::get('/public_kids_list', function()
 
 // GOVERMENT
 Route::get('/home_goverment', function()
-{	
+{
 	$dg = new DataGetter();
 	$ranking_kota = json_decode($dg->getTopSchoolCity()->getContent());
 	return View::make('goverment.home_goverment',compact("ranking_kota"));
@@ -156,7 +156,11 @@ Route::post('/laporan',function(){
 // SCOUTER
 Route::get('/home_scouter', function()
 {
-	return View::make('scouter.home_scouter');
+	$rg = new ReportGenerator();
+	$list_sekolah_berprestasi =json_decode($rg->getAllTopSchool()->getContent());
+	$list_siswa_berprestasi = json_decode($rg->getAllTopStudent()->getContent());
+	$list_siswa_berprestasi_tidak_sekolah = json_decode($rg->getAllTopStudentNotSchool()->getContent());
+	return View::make('scouter.home_scouter',compact('list_sekolah_berprestasi','list_siswa_berprestasi','list_siswa_berprestasi_tidak_sekolah'));
 });
 Route::get('/scouter_schools_list', function()
 {
