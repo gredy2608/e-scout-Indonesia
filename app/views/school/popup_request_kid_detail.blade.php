@@ -57,9 +57,12 @@
 				</div>
 				<span class="clearfix"></span>
 				<h4>Daftar Nilai</h4>
-				<table class="table">
+				<table class="table table-bordered table-condensed">
 					<thead>
 						<tr>
+							<th>
+								Pelajaran
+							</th>
 							<th>
 								U1
 							</th>
@@ -100,44 +103,47 @@
 					</thead>
 					<tbody>
 						@for($i=0; $i< 3; $i++)
-						
+
 						<tr>
-							<th>
-								U1
-							</th>
-							<th>
-								U2
-							</th>
-							<th>
-								U3
-							</th>
-							<th>
-								U4
-							</th>
-							<th>
-								U5
-							</th>
-							<th>
-								UTS
-							</th>
-							<th>
-								U6
-							</th>
-							<th>
-								U7
-							</th>
-							<th>
-								U8
-							</th>
-							<th>
-								U9
-							</th>
-							<th>
-								U10
-							</th>
-							<th>
-								UAS
-							</th>
+							<td>
+								Matematika
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
+							<td>
+								90
+							</td>
 						</tr>
 						@endfor
 					</tbody>

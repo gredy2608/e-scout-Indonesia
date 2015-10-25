@@ -11,22 +11,22 @@
 		<ul class="list-unstyled">
 
 			<li class="withripple">
-				<a href="#">
+				<a href="#" style="color: #fff; padding-top:15px; padding-bottom:15px; display: block;">
 					Home
 				</a>
 			</li>
 			<li class="withripple">
-				<a href="#">
+				<a href="#" style="color: #fff; padding-top:15px; padding-bottom:15px; display: block;">
 					Tambah Siswa
 				</a>
 			</li>
 			<li class="withripple">
-				<a href="#">
+				<a href="#" style="color: #fff; padding-top:15px; padding-bottom:15px; display: block;">
 					Tambah Nilai
 				</a>
 			</li>
 			<li class="withripple">
-				<a href="#">
+				<a href="#" style="color: #fff; padding-top:15px; padding-bottom:15px; display: block;">
 					Prestasi Siswa
 				</a>
 			</li> 
@@ -125,7 +125,8 @@
 		</div>
 	</div>
 	@include('school.popup_request_kid_detail')
-	@include('popup_achievement_detail')  
+	@include('school.popup_achievement_detail2')
+	 
 	
 </div>
 
